@@ -27,8 +27,7 @@ set ruler                   "Show line and column number
 set formatoptions=1         "Don't wrap text after a one-letter word
 set linebreak               "Break lines when appropriate
 set list                    "show invisible characters
-set listchars=tab:>·,trail:· "but only show tabs and trailing whitespace
-
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 "Sugar settings
 "set tags=~/.vim/mytags/sugar "ctags for sugarcrm_dev project
 
@@ -47,8 +46,8 @@ if &t_Co > 1
 endif
 
 "When in split screen, map <C-LeftArrow> and <C-RightArrow> to switch panes.
-nn [5C <C-W>w
-nn [5R <C-W>W
+nn [5c <c-w>w
+nn [5r <c-w>w
 
 "Set filetype for Drupal PHP files.
 if has("autocmd")
@@ -78,10 +77,12 @@ if has("autocmd")
 endif
 
 " Highlight long comments and trailing whitespace.
-highlight ExtraWhitespace ctermbg=red guibg=red
-let a = matchadd('ExtraWhitespace', '\s\+$')
-highlight OverLength ctermbg=red ctermfg=white guibg=red guifg=white
-let b = matchadd('OverLength', '\(^\(\s\)\{-}\(*\|//\|/\*\)\{1}\(.\)*\(\%81v\)\)\@<=\(.\)\{1,}$')
+  if has("matchadd")
+    highlight ExtraWhitespace ctermbg=red guibg=red
+    let a = matchadd('ExtraWhitespace', '\s\+$')
+    highlight OverLength ctermbg=red ctermfg=white guibg=red guifg=white
+    let b = matchadd('OverLength', '\(^\(\s\)\{-}\(*\|//\|/\*\)\{1}\(.\)*\(\%81v\)\)\@<=\(.\)\{1,}$')
+  endif
 
 " Lookup the API docs for a drupal function under cursor.
 nnoremap <Leader>da :execute "!open http://api.drupal.org/".shellescape(expand("<cword>"), 1)<CR>
