@@ -40,3 +40,6 @@
 [submodule "bundle/delimitMate"]
 	path = bundle/delimitMate
 	url = git://github.com/Raimondi/delimitMate.git
+[submodule "bundle/debugger"]
+	path = bundle/debugger
+	url = git://github.com/ornicar/vim-php-debugger.git
