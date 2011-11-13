@@ -1,11 +1,12 @@
 " Allow Vim-only settings even if they break vi keybindings.
 set nocompatible
 
-"Enable filetype detection
-":filetype on
-call pathogen#infect()
-syntax on
-filetype plugin indent on
+syntax on " syntax highting
+filetype on " Enable filetype detection
+filetype plugin indent on " enable loading indent file for filetypes
+
+let g:SuperTabDefaultCompletionType = "contextet"
+set completeopt=menuone,longest,preview
 
 "General settings
 set incsearch               "Find as you type
@@ -45,10 +46,6 @@ if &t_Co > 1
   syntax enable
 endif
 
-"When in split screen, map <C-LeftArrow> and <C-RightArrow> to switch panes.
-nn [5c <c-w>w
-nn [5r <c-w>w
-
 "Set filetype for Drupal PHP files.
 if has("autocmd")
   augroup module
@@ -66,11 +63,14 @@ map <S-u> :redo<cr>
 map <C-n> :tabn<cr>
 map <C-p> :tabp<cr>
 
-"Custom SVN blame
-vmap gl :<C-U>!svn blame <C-R>=expand("%:P") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+" Map movements from one window pane to another
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
 
-" Uncomment the following to have Vim jump to the last position when
-" reopening a file
+
+" Vim jump to the last position when reopening a file
 if has("autocmd")
  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
  \| exe "normal! g'\"" | endif
@@ -91,4 +91,30 @@ nnoremap <Leader>dda :execute "!open http://api.drush.ws/api/function/".shellesc
 " Get the value of the drupal variable under cursor.
 nnoremap <Leader>dv :execute "!drush vget ".shellescape(expand("<cword>"), 1)<CR>
 
+
+" Leader here can be set to athing.  The default is \
+map <Leader>td <Plug>TaskList
+map <leader>n :NERDTreeToggle<CR>
+map <Leader>g :GundoToggle<CR>
+map <Leader>a <Esc>:Ack! 
+map <Leader>mg :call MakeGreen()<cr>$ 
+map <leader>j :RopeGotoDefinition<CR>
+map <leader>r :RopeRename<CR>
+map <Leader>tl :TlistToggle<CR>
+call pathogen#infect()
+
 colorscheme vividchalk
+
+set statusline+=%{fugitive#statusline()}
+
+" Add the virtualenv's site-packages to vim path
+py << EOF
+import os.path
+import sys
+import vim
+if 'VIRTUAL_ENV' in os.environ:
+    project_base_dir = os.environ['VIRTUAL_ENV']
+    sys.path.insert(0, project_base_dir)
+    activate_this = os.path.join(project_base_dir,  'bin/activate_this.py')
+    execfile(activate_this, dict(__file__=activate_this))
+EOF
