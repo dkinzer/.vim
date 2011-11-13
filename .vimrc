@@ -93,14 +93,14 @@ nnoremap <Leader>dv :execute "!drush vget ".shellescape(expand("<cword>"), 1)<CR
 
 
 " Leader here can be set to athing.  The default is \
-map <Leader>tl <Plug>TaskList
+map <Leader>td <Plug>TaskList
 map <leader>n :NERDTreeToggle<CR>
 map <Leader>g :GundoToggle<CR>
 map <Leader>a <Esc>:Ack! 
 map <Leader>mg :call MakeGreen()<cr>$ 
 map <leader>j :RopeGotoDefinition<CR>
 map <leader>r :RopeRename<CR>
-map <Leader>t :TlistToggle<CR>
+map <Leader>tl :TlistToggle<CR>
 call pathogen#infect()
 
 colorscheme vividchalk
@@ -118,4 +118,3 @@ if 'VIRTUAL_ENV' in os.environ:
     activate_this = os.path.join(project_base_dir,  'bin/activate_this.py')
     execfile(activate_this, dict(__file__=activate_this))
 EOF
-
