@@ -49,3 +49,6 @@
 [submodule "bundle/drupal_snippets"]
 	path = bundle/drupal_snippets
 	url = git://github.com/theunraveler/Drupal-Snippets-for-Vim.git
+[submodule "bundle/gundo"]
+	path = bundle/gundo
+	url = https://github.com/sjl/gundo.vim.git
