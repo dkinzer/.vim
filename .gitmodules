@@ -16,9 +16,6 @@
 [submodule "bundle/minibufexpl"]
 	path = bundle/minibufexpl
 	url =  git://github.com/fholgado/minibufexpl.vim.git
-[submodule "bundle/command-t"]
-	path = bundle/command-t
-	url =  git://github.com/wincent/Command-T.git
 [submodule "bundle/ack"]
 	path = bundle/ack
 	url =  git://github.com/mileszs/ack.vim.git
@@ -51,10 +48,10 @@
 	url = git://github.com/theunraveler/Drupal-Snippets-for-Vim.git
 [submodule "bundle/gundo"]
 	path = bundle/gundo
-	url = https://github.com/sjl/gundo.vim.git
+	url = git://github.com/sjl/gundo.vim.git
 [submodule "bundle/ropevim"]
 	path = bundle/ropevim
-	url = https://github.com/sontek/rope-vim.git
+	url = git://github.com/sontek/rope-vim.git
 [submodule "bundle/taglist"]
 	path = bundle/taglist
-	url = https://github.com/vim-scripts/taglist.vim.git
+	url = git://github.com/vim-scripts/taglist.vim.git
