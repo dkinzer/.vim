@@ -31,7 +31,7 @@ set list                    "show invisible characters
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 " Taglist options
-let Tlist_Ctags_Cmd='/usr/bin/ctags-exuberant'
+"let Tlist_Ctags_Cmd='/usr/bin/ctags-exuberant'
 " set the names of flags
 let tlist_php_settings = 'php;c:class;f:function;d:constant'
 " close all folds except for current file
