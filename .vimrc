@@ -138,6 +138,17 @@ call add(g:pathogen_disabled, 'drupalvim')
 "call add(g:pathogen_disabled, 'supertab')
 "call add(g:pathogen_disabled, 'supertab')
 
+" Gundo requires at least vim 7.3
+if v:version < '703' || !has('python')
+  call add(g:pathogen_disabled, 'gundo')
+endif
+
+if v:version < '702'
+  call add(g:pathogen_disabled, 'autocomplpop')
+  call add(g:pathogen_disabled, 'fuzzyfinder')
+  call add(g:pathogen_disabled, 'l9')
+endif
+
 call pathogen#infect()
 
 colorscheme vividchalk
