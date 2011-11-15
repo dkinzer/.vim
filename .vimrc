@@ -29,9 +29,19 @@ set formatoptions=1         "Don't wrap text after a one-letter word
 set linebreak               "Break lines when appropriate
 set list                    "show invisible characters
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-"Sugar settings
-"set tags=~/.vim/mytags/sugar "ctags for sugarcrm_dev project
 
+" Taglist options
+let Tlist_Ctags_Cmd='/usr/bin/ctags-exuberant'
+" set the names of flags
+let tlist_php_settings = 'php;c:class;f:function;d:constant'
+" close all folds except for current file
+let Tlist_File_Fold_Auto_Close = 1
+" make tlist pane active when opened
+let Tlist_GainFocus_On_ToggleOpen = 1
+" width of window
+let Tlist_WinWidth = 40
+" close tlist when a selection is made
+let Tlist_Close_On_Select = 1
 
 "Drupal settings
 set expandtab               "Tab key inserts spaces
@@ -40,6 +50,7 @@ set shiftwidth=2            "Use two spaces for auto-indent
 set autoindent              "Auto indent based on previous line
 let php_htmlInStrings = 1   "Syntax highlight for HTML inside PHP strings
 let php_parent_error_open = 1 "Display error for unmatch brackets
+"set tags=/var/www/drupal-6.22/tags
 
 "Enable syntax highlighting
 if &t_Co > 1
@@ -58,7 +69,7 @@ if has("autocmd")
   augroup END
 endif
 
-"Custom key mapping
+"Custom key mappings
 map <S-u> :redo<cr>
 map <C-n> :tabn<cr>
 map <C-p> :tabp<cr>
@@ -68,6 +79,11 @@ map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
+
+" PDV mappings
+inoremap <C-P> :call PhpDocSingle()<CR>i
+nnoremap <C-P> :call PhpDocSingle()<CR>
+vnoremap <C-P> :call PhpDocRange()<CR>
 
 
 " Vim jump to the last position when reopening a file
@@ -93,14 +109,35 @@ nnoremap <Leader>dv :execute "!drush vget ".shellescape(expand("<cword>"), 1)<CR
 
 
 " Leader here can be set to athing.  The default is \
-map <Leader>td <Plug>TaskList
+map <Leader>tl <Plug>TaskList
 map <leader>n :NERDTreeToggle<CR>
 map <Leader>g :GundoToggle<CR>
 map <Leader>a <Esc>:Ack! 
 map <Leader>mg :call MakeGreen()<cr>$ 
 map <leader>j :RopeGotoDefinition<CR>
 map <leader>r :RopeRename<CR>
-map <Leader>tl :TlistToggle<CR>
+map <Leader>t :TlistToggle<CR>
+map <F10> :!~/mytags.sh<CR>
+
+
+" Pathogen
+" To disable a plugin, add it's bundle name to the following list
+let g:pathogen_disabled = []
+"call add(g:pathogen_disabled, 'gundo')
+"call add(g:pathogen_disabled, 'makegreen')
+"call add(g:pathogen_disabled, 'matchit')
+"call add(g:pathogen_disabled, 'vip')
+"call add(g:pathogen_disabled, 'supertab')
+"call add(g:pathogen_disabled, 'tasklist')
+"call add(g:pathogen_disabled, 'ack')
+"call add(g:pathogen_disabled, 'nerdtree')
+"call add(g:pathogen_disabled, 'fugitive')
+
+" Disabled drupal-vim because it breaks the taglit plugin.
+call add(g:pathogen_disabled, 'drupalvim')
+"call add(g:pathogen_disabled, 'supertab')
+"call add(g:pathogen_disabled, 'supertab')
+
 call pathogen#infect()
 
 colorscheme vividchalk
@@ -118,3 +155,5 @@ if 'VIRTUAL_ENV' in os.environ:
     activate_this = os.path.join(project_base_dir,  'bin/activate_this.py')
     execfile(activate_this, dict(__file__=activate_this))
 EOF
+
+source ~/.vim/bundle/vip/.vim/php-doc.vim
