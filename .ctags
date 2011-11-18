@@ -1,7 +1,7 @@
 --exclude="\.git"
 --exclude="\.min\.js"
 --langmap=php:.engine.inc.module.theme.php
---PHP-kinds=cdfi
+--PHP-kinds=cfpd
 --languages=php
 --recurse=yes
 --totals=yes
