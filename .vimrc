@@ -146,7 +146,7 @@ endif
 if v:version < '702'
   call add(g:pathogen_disabled, 'autocomplpop')
   call add(g:pathogen_disabled, 'fuzzyfinder')
-  call add(g:pathogen_disabled, 'l9')
+  call add(g:pathogen_disabled, 'L9')
 endif
 
 call pathogen#infect()
