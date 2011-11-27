@@ -5,7 +5,7 @@ syntax on " syntax highting
 filetype on " Enable filetype detection
 filetype plugin indent on " enable loading indent file for filetypes
 
-let g:SuperTabDefaultCompletionType = "contextet"
+let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
 
 "General settings
@@ -117,8 +117,6 @@ map <Leader>mg :call MakeGreen()<cr>$
 map <leader>j :RopeGotoDefinition<CR>
 map <leader>r :RopeRename<CR>
 map <Leader>t :TlistToggle<CR>
-map <F10> :!~/mytags.sh<CR>
-
 
 " Pathogen
 " To disable a plugin, add it's bundle name to the following list
@@ -134,9 +132,7 @@ let g:pathogen_disabled = []
 "call add(g:pathogen_disabled, 'fugitive')
 
 " Disabled drupal-vim because it breaks the taglit plugin.
-call add(g:pathogen_disabled, 'drupalvim')
-"call add(g:pathogen_disabled, 'supertab')
-"call add(g:pathogen_disabled, 'supertab')
+"call add(g:pathogen_disabled, 'drupalvim')
 
 " Gundo requires at least vim 7.3
 if v:version < '703' || !has('python')
