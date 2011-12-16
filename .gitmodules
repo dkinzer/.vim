@@ -64,3 +64,6 @@
 [submodule "bundle/DirDiff"]
 	path = bundle/DirDiff
 	url = git://github.com/vim-scripts/DirDiff.vim.git
+[submodule "bundle/ZoomWin"]
+	path = bundle/ZoomWin
+	url = git://github.com/blueyed/ZoomWin.git
