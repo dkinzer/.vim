@@ -67,3 +67,6 @@
 [submodule "bundle/ZoomWin"]
 	path = bundle/ZoomWin
 	url = git://github.com/blueyed/ZoomWin.git
+[submodule "bundle/web-indent"]
+	path = bundle/web-indent
+	url = git://github.com/cawinkelmann/vim-web-indent.git
