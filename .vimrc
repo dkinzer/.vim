@@ -141,14 +141,26 @@ endif
 
 if v:version < '702'
   call add(g:pathogen_disabled, 'autocomplpop')
+  call add(g:pathogen_disabled, 'ZoomWin')
   call add(g:pathogen_disabled, 'fuzzyfinder')
   call add(g:pathogen_disabled, 'L9')
+  call add(g:pathogen_disabled, 'minibufexpl')
 endif
 
 call pathogen#infect()
 
 colorscheme vividchalk
-
+set statusline=%t       "tail of the filename
+set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+set statusline+=%{&ff}] "file format
+set statusline+=%h      "help file flag
+set statusline+=%m      "modified flag
+set statusline+=%r      "read only flag
+set statusline+=%y      "filetype
+set statusline+=%=      "left/right separator
+set statusline+=%c,     "cursor column
+set statusline+=%l/%L   "cursor line/total lines
+set statusline+=\ %P    "percent through file
 set statusline+=%{fugitive#statusline()}
 
 " Add the virtualenv's site-packages to vim path
