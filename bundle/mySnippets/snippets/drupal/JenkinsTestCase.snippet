@@ -1,0 +1,21 @@
+<?php
+class `Filename()`TestCase extends JenkinsTestCase {
+	protected $privaleged_user;
+
+	public static function getInfo() {
+		return array(
+			'name' => '${1:name}',
+			'description' => '${2:description}',
+			'group' =>'Jenkins',
+		);
+	}
+
+	public function setUp() {
+		parent::setUp('${4:moduleName}');
+	}
+
+	public function test${6:testLabel}() {
+		${7};
+	}
+}
+?>

@@ -1,0 +1,10 @@
+/**
+ * Implements of hook_simpletest()
+ */
+function `Filename()`_simpletest() {
+	$module_name = '`Filename()`';
+	$dir = drupal_get_path('module', $module_name). '/tests';
+	$tests = file_scan_directory($dir, '\.test$');
+	return array_keys($tests);
+}
+

@@ -5,16 +5,8 @@
 --languages=php
 --recurse=yes
 --totals=yes
---tag-relative=yes
+--tag-relative=no
 --regex-PHP=/abstract\s+class\s+([^ ]+)/\1/c/
 --regex-PHP=/interface\s+([^ ]+)/\1/c/
 --regex-PHP=/(public\s+|static\s+|protected\s+|private\s+)\$([^ =contextet]+)/\2/p/
 
---langdef=js
---langmap=js:.js
---regex-js=/([A-Za-z0-9._$]+)[ \t]*[:=][ \t]*\{/\1/,object/
---regex-js=/([A-Za-z0-9._$()]+)[ \t]*[:=][ \t]*function[ \t]*\(/\1/,function/
---regex-js=/function[ \t]+([A-Za-z0-9._$]+)[ \t]*\(([^)])\)/\1/,function/
---regex-js=/([A-Za-z0-9._$]+)[ \t]*[:=][ \t]*\[/\1/,array/
---regex-js=/([^= ]+)[ \t]*=[ \t]*[^"]'[^']*/\1/,string/
---regex-js=/([^= ]+)[ \t]*=[ \t]*[^']"[^"]*/\1/,string/

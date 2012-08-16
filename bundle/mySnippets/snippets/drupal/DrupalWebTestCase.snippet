@@ -1,0 +1,24 @@
+<?php
+class `Filename()` extends DrupalWebTestCase {
+	protected $privaleged_user;
+
+	public static function getInfo() {
+		return array(
+			'name' => '${1:name}',
+			'description' => '${2:description}',
+			'group' =>'${3:groupName}',
+		);
+	}
+
+	public function setUp() {
+		parent::setUp('${4:moduleName}');
+
+		$this->privaleged_user = $this->drupalCreateUser(array('${5:permission}'));
+		$this->drupalLogin($this->privileged_user);
+	}
+
+	public function test${6:testLabel}() {
+		${7};
+	}
+}
+?>
