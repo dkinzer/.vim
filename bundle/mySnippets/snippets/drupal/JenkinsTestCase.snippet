@@ -1,17 +1,21 @@
 <?php
+
+module_load_include('test', 'jenkins', 'tests/Jenkins');
+module_load_include('inc', '${1:resource_name}', '${2:resource_path'});
+
 class `Filename()`TestCase extends JenkinsTestCase {
 	protected $privaleged_user;
 
 	public static function getInfo() {
 		return array(
-			'name' => '${1:name}',
-			'description' => '${2:description}',
+			'name' => '${3:name}',
+			'description' => '${4:description}',
 			'group' =>'Jenkins',
 		);
 	}
 
 	public function setUp() {
-		parent::setUp('${4:moduleName}');
+		parent::setUp('${5:moduleName}');
 	}
 
 	public function test${6:testLabel}() {
