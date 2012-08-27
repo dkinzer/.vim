@@ -27,7 +27,7 @@ set hlsearch                "Highlight matches in search
 set ruler                   "Show line and column number
 set formatoptions=1         "Don't wrap text after a one-letter word
 set linebreak               "Break lines when appropriate
-set list                    "show invisible characters
+"set list                    "show invisible characters
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 " Taglist options
@@ -57,7 +57,10 @@ let php_parent_error_close = 1 "for highlighting parent error ] or )
 "                             x=-1 to sync by search ( default )
 "                             x>0 to sync at least x lines backwards
 "                             x=0 to sync from start
-set tags=./tagss
+
+if filereadable("/var/www/html/dkinzer/website/tags")
+  set tags="/var/www/html/dkinzer/website/tags"
+endif
 
 "Enable syntax highlighting
 if &t_Co > 1
