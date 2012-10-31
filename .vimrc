@@ -58,9 +58,6 @@ let php_parent_error_close = 1 "for highlighting parent error ] or )
 "                             x>0 to sync at least x lines backwards
 "                             x=0 to sync from start
 
-if filereadable("/var/www/html/dkinzer/website/tags")
-  set tags="/var/www/html/dkinzer/website/tags"
-endif
 
 "Enable syntax highlighting
 if &t_Co > 1
@@ -187,3 +184,9 @@ if 'VIRTUAL_ENV' in os.environ:
 EOF
 
 source ~/.vim/bundle/vip/.vim/php-doc.vim
+
+
+
+if filereadable("/var/www/html/dkinzer/website/tags")
+  set tags=tags,/var/www/html/dkinzer/website/tags
+endif
