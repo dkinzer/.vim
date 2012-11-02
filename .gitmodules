@@ -13,9 +13,6 @@
 [submodule "bundle/supertab"]
 	path = bundle/supertab
 	url =  git://github.com/ervandew/supertab.git
-[submodule "bundle/minibufexpl"]
-	path = bundle/minibufexpl
-	url =  git://github.com/fholgado/minibufexpl.vim.git
 [submodule "bundle/ack"]
 	path = bundle/ack
 	url =  git://github.com/mileszs/ack.vim.git
@@ -37,9 +34,6 @@
 [submodule "bundle/delimitMate"]
 	path = bundle/delimitMate
 	url = git://github.com/Raimondi/delimitMate.git
-[submodule "bundle/debugger"]
-	path = bundle/debugger
-	url = git://github.com/ornicar/vim-php-debugger.git
 [submodule "bundle/drupalvim"]
 	path = bundle/drupalvim
 	url = http://git.drupal.org/project/vimrc.git
@@ -73,3 +67,6 @@
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
+[submodule "bundle/vim-debug"]
+	path = bundle/vim-debug
+	url = git://github.com/jabapyth/vim-debug.git

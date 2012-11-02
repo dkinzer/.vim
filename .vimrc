@@ -140,8 +140,6 @@ let g:pathogen_disabled = []
 "call add(g:pathogen_disabled, 'ack')
 "call add(g:pathogen_disabled, 'nerdtree')
 "call add(g:pathogen_disabled, 'fugitive')
-
-" Disabled drupal-vim because it breaks the taglit plugin.
 "call add(g:pathogen_disabled, 'drupalvim')
 
 " Gundo requires at least vim 7.3
@@ -154,13 +152,13 @@ if v:version < '702'
   call add(g:pathogen_disabled, 'ZoomWin')
   call add(g:pathogen_disabled, 'fuzzyfinder')
   call add(g:pathogen_disabled, 'L9')
-  call add(g:pathogen_disabled, 'minibufexpl')
   call add(g:pathogen_disabled, 'syntastic')
 endif
 
 call pathogen#infect()
 
 colorscheme vividchalk
+
 set statusline=%t       "tail of the filename
 set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
 set statusline+=%{&ff}] "file format
@@ -174,10 +172,10 @@ set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P    "percent through file
 set statusline+=%{fugitive#statusline()}
 
-" Add the virtualenv's site-packages to vim path
-source ~/.vim/bundle/vip/.vim/php-doc.vim
 
-
+if filereadable("~/.vim/bundle/vip/.vim/php-doc.vim")
+  source ~/.vim/bundle/vip/.vim/php-doc.vim;
+endif
 
 if filereadable("/var/www/html/dkinzer/website/tags")
   set tags=tags,/var/www/html/dkinzer/website/tags
