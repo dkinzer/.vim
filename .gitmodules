@@ -16,9 +16,6 @@
 [submodule "bundle/ack"]
 	path = bundle/ack
 	url =  git://github.com/mileszs/ack.vim.git
-[submodule "bundle/vip"]
-	path = bundle/vip
-	url =  git://github.com/tobyS/vip.git
 [submodule "bundle/makegreen"]
 	path = bundle/makegreen
 	url =  git://github.com/reinh/vim-makegreen
@@ -70,3 +67,6 @@
 [submodule "bundle/xdebug"]
 	path = bundle/xdebug
 	url = git://github.com/vim-scripts/XDebug-DBGp-client-for-PHP.git
+[submodule "bundle/PIV"]
+	path = bundle/PIV
+	url = git://github.com/spf13/PIV.git
