@@ -30,18 +30,6 @@ set linebreak               "Break lines when appropriate
 "set list                    "show invisible characters
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
-" Taglist options
-"let Tlist_Ctags_Cmd='/usr/bin/ctags-exuberant'
-" set the names of flags
-let tlist_php_settings = 'php;c:class;f:function;d:constant'
-" close all folds except for current file
-let Tlist_File_Fold_Auto_Close = 1
-" make tlist pane active when opened
-let Tlist_GainFocus_On_ToggleOpen = 1
-" width of window
-let Tlist_WinWidth = 40
-" close tlist when a selection is made
-let Tlist_Close_On_Select = 1
 
 "Drupal settings
 set expandtab               "Tab key inserts spaces
@@ -172,10 +160,6 @@ set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P    "percent through file
 set statusline+=%{fugitive#statusline()}
 
-
-if filereadable("~/.vim/bundle/vip/.vim/php-doc.vim")
-  source ~/.vim/bundle/vip/.vim/php-doc.vim;
-endif
 
 if filereadable("/var/www/html/dkinzer/website/tags")
   set tags=tags,/var/www/html/dkinzer/website/tags
