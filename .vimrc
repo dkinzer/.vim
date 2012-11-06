@@ -145,7 +145,12 @@ endif
 
 call pathogen#infect()
 
-colorscheme vividchalk
+set background=dark
+let g:solarized_termcolors=16
+let g:solarized_termtrans=1
+"let g:solarized_bold=1
+colorscheme solarized
+
 
 set statusline=%t       "tail of the filename
 set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
