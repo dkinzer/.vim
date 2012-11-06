@@ -141,7 +141,7 @@ if v:version < '702'
   call add(g:pathogen_disabled, 'fuzzyfinder')
   call add(g:pathogen_disabled, 'L9')
   call add(g:pathogen_disabled, 'syntastic')
-  call add(g:pathogen_disabled, 'Tagbar')
+  call add(g:pathogen_disabled, 'tagbar')
 endif
 
 if !executable("ctags")
