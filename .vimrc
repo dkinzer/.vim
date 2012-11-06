@@ -133,7 +133,7 @@ let g:pathogen_disabled = []
 " Gundo requires at least vim 7.3
 if v:version < '703' || !has('python')
   call add(g:pathogen_disabled, 'gundo')
-  call add(g:pathogen_disabled, 'debugger')
+  call add(g:pathogen_disabled, 'xdebug')
 endif
 
 if v:version < '702'
