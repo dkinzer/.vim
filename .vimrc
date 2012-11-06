@@ -142,12 +142,12 @@ if v:version < '702'
   call add(g:pathogen_disabled, 'L9')
   call add(g:pathogen_disabled, 'syntastic')
   call add(g:pathogen_disabled, 'tagbar')
-  call add(g:pathogen_disabled, 'Taglist')
+  call add(g:pathogen_disabled, 'tasklist')
 endif
 
 if !executable("ctags")
-  call add(g:pathogen_disabled, 'Taglist')
-  call add(g:pathogen_disabled, 'Tagbar')
+  call add(g:pathogen_disabled, 'tasklist')
+  call add(g:pathogen_disabled, 'tagbar')
 endif
 
 call pathogen#infect()
