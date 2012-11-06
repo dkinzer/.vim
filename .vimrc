@@ -141,6 +141,12 @@ if v:version < '702'
   call add(g:pathogen_disabled, 'fuzzyfinder')
   call add(g:pathogen_disabled, 'L9')
   call add(g:pathogen_disabled, 'syntastic')
+  call add(g:pathogen_disabled, 'Tagbar')
+endif
+
+if !executable("ctags")
+  call add(g:pathogen_disabled, 'Taglist')
+  call add(g:pathogen_disabled, 'Tagbar')
 endif
 
 call pathogen#infect()
@@ -148,7 +154,8 @@ call pathogen#infect()
 set background=dark
 let g:solarized_termcolors=16
 let g:solarized_termtrans=1
-"let g:solarized_bold=1
+let g:solarized_bold=1
+set t_Co=256
 colorscheme solarized
 
 
@@ -167,5 +174,5 @@ set statusline+=%{fugitive#statusline()}
 
 
 if filereadable("/var/www/html/dkinzer/website/tags")
-  set tags=tags,/var/www/html/dkinzer/website/tags
+  set tags=./tags,/var/www/html/dkinzer/website/tags
 endif
