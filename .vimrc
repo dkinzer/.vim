@@ -152,14 +152,17 @@ if !executable("ctags")
 endif
 
 call pathogen#infect()
-
 set background=dark
-let g:solarized_termcolors=16
-let g:solarized_termtrans=1
-let g:solarized_bold=1
-set t_Co=256
-colorscheme solarized
 
+if exists('$ComSpec')
+  colorscheme vividchalk 
+else
+  let g:solarized_termcolors=16
+  let g:solarized_termtrans=1
+  let g:solorized_bold=0
+  set t_Co=256
+  colorscheme solarized
+endif
 
 set statusline=%t       "tail of the filename
 set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
