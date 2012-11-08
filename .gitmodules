@@ -76,3 +76,6 @@
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = git://github.com/scrooloose/nerdcommenter.git
+[submodule "bundle/linediff"]
+	path = bundle/linediff
+	url = git://github.com/AndrewRadev/linediff.vim.git
