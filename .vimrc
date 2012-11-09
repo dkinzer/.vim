@@ -6,6 +6,7 @@ filetype on " Enable filetype detection
 filetype plugin indent on " enable loading indent file for filetypes
 
 let g:SuperTabDefaultCompletionType = "context"
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 set completeopt=menuone,longest,preview
 
 "General settings
@@ -107,20 +108,18 @@ nnoremap <Leader>dv :execute "!drush vget ".shellescape(expand("<cword>"), 1)<CR
 
 
 " Leader here can be set to athing.  The default is \
-map <Leader>tl <Plug>TaskList
 map <leader>n :NERDTreeToggle<CR>
 map <Leader>g :GundoToggle<CR>
 map <Leader>a <Esc>:Ack! 
-map <Leader>mg :call MakeGreen()<cr>$ 
 map <leader>j :RopeGotoDefinition<CR>
 map <leader>r :RopeRename<CR>
-map <Leader>t :TlistToggle<CR>
+map <Leader>t :TagbarToggle<CR>
+map <Leader>tl <Plug>TaskList
 
 " Pathogen
 " To disable a plugin, add it's bundle name to the following list
 let g:pathogen_disabled = []
 "call add(g:pathogen_disabled, 'gundo')
-"call add(g:pathogen_disabled, 'makegreen')
 "call add(g:pathogen_disabled, 'matchit')
 "call add(g:pathogen_disabled, 'vip')
 "call add(g:pathogen_disabled, 'supertab')
