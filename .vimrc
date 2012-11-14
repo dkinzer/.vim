@@ -30,6 +30,7 @@ set formatoptions=1         "Don't wrap text after a one-letter word
 set linebreak               "Break lines when appropriate
 "set list                    "show invisible characters
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set shellcmdflag=-ic         "Interactive shell loads my aliases"
 
 
 "Drupal settings
