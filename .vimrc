@@ -180,3 +180,10 @@ set statusline+=%{fugitive#statusline()}
 if filereadable("/var/www/html/dkinzer/website/tags")
   set tags=./tags,/var/www/html/dkinzer/website/tags
 endif
+
+
+" Nerd Tree settings.
+let g:NERDTreeDirArrows=0
+
+
+
