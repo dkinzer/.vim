@@ -118,8 +118,7 @@ map <Leader>t :TagbarToggle<CR>
 map <Leader>tl <Plug>TaskList
 
 " Pathogen settings.
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-
+runtime bundle/vim-pathogen/autoload/pathogen.vim bundle\vim-pathogen\autoload\pathogen.vim
 
 " To disable a plugin, add it's bundle name to the following list
 let g:pathogen_disabled = []
