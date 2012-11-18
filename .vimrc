@@ -5,6 +5,51 @@ syntax on " syntax highting
 filetype on " Enable filetype detection
 filetype plugin indent on " enable loading indent file for filetypes
 
+" Pathogen settings.
+runtime bundle/vim-pathogen/autoload/pathogen.vim bundle\vim-pathogen\autoload\pathogen.vim
+
+" To disable a plugin, add it's bundle name to the following list
+let g:pathogen_disabled = []
+"call add(g:pathogen_disabled, 'gundo')
+"call add(g:pathogen_disabled, 'matchit')
+"call add(g:pathogen_disabled, 'supertab')
+"call add(g:pathogen_disabled, 'tasklist')
+"call add(g:pathogen_disabled, 'ack')
+"call add(g:pathogen_disabled, 'nerdtree')
+"call add(g:pathogen_disabled, 'fugitive')
+"call add(g:pathogen_disabled, 'drupalvim')
+"call add(g:pathogen_disabled, 'snipmate')
+"call add(g:pathogen_disabled, 'neocomplete')
+"call add(g:pathogen_disabled, 'tabular')
+"call add(g:pathogen_disabled, 'easymotion')
+
+
+" Gundo requires at least vim 7.3
+if v:version < '703' || !has('python')
+  call add(g:pathogen_disabled, 'gundo')
+  call add(g:pathogen_disabled, 'xdebug')
+endif
+
+if v:version < '702'
+  call add(g:pathogen_disabled, 'autocomplpop')
+  call add(g:pathogen_disabled, 'ZoomWin')
+  call add(g:pathogen_disabled, 'fuzzyfinder')
+  call add(g:pathogen_disabled, 'L9')
+  call add(g:pathogen_disabled, 'syntastic')
+  call add(g:pathogen_disabled, 'tagbar')
+  call add(g:pathogen_disabled, 'tasklist')
+endif
+
+if !executable("ctags")
+  call add(g:pathogen_disabled, 'tasklist')
+  call add(g:pathogen_disabled, 'tagbar')
+endif
+
+if exists($ComSpec)
+  call add(g:pathogen_disabled, 'PIV')
+endif
+
+call pathogen#infect()
 let g:SuperTabDefaultCompletionType = "context"
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 set completeopt=menuone,longest,preview
@@ -117,43 +162,8 @@ map <leader>r :RopeRename<CR>
 map <Leader>t :TagbarToggle<CR>
 map <Leader>tl <Plug>TaskList
 
-" Pathogen settings.
-runtime bundle/vim-pathogen/autoload/pathogen.vim bundle\vim-pathogen\autoload\pathogen.vim
 
-" To disable a plugin, add it's bundle name to the following list
-let g:pathogen_disabled = []
-"call add(g:pathogen_disabled, 'gundo')
-"call add(g:pathogen_disabled, 'matchit')
-"call add(g:pathogen_disabled, 'vip')
-"call add(g:pathogen_disabled, 'supertab')
-"call add(g:pathogen_disabled, 'tasklist')
-"call add(g:pathogen_disabled, 'ack')
-"call add(g:pathogen_disabled, 'nerdtree')
-"call add(g:pathogen_disabled, 'fugitive')
-"call add(g:pathogen_disabled, 'drupalvim')
 
-" Gundo requires at least vim 7.3
-if v:version < '703' || !has('python')
-  call add(g:pathogen_disabled, 'gundo')
-  call add(g:pathogen_disabled, 'xdebug')
-endif
-
-if v:version < '702'
-  call add(g:pathogen_disabled, 'autocomplpop')
-  call add(g:pathogen_disabled, 'ZoomWin')
-  call add(g:pathogen_disabled, 'fuzzyfinder')
-  call add(g:pathogen_disabled, 'L9')
-  call add(g:pathogen_disabled, 'syntastic')
-  call add(g:pathogen_disabled, 'tagbar')
-  call add(g:pathogen_disabled, 'tasklist')
-endif
-
-if !executable("ctags")
-  call add(g:pathogen_disabled, 'tasklist')
-  call add(g:pathogen_disabled, 'tagbar')
-endif
-
-call pathogen#infect()
 set background=dark
 
 if exists('$ComSpec')
@@ -187,6 +197,5 @@ endif
 
 " Nerd Tree settings.
 let g:NERDTreeDirArrows=0
-
 
 
