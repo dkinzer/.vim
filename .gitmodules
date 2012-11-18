@@ -88,3 +88,6 @@
 [submodule "bundle/tabular"]
 	path = bundle/tabular
 	url = git://github.com/godlygeek/tabular.git
+[submodule "bundle/neocomplete"]
+	path = bundle/neocomplete
+	url = git://github.com/Shougo/neocomplcache.git
