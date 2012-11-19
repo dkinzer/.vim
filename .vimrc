@@ -168,6 +168,8 @@ set background=dark
 
 if exists('$ComSpec')
   colorscheme vividchalk 
+elseif exists('$__vim_colorscheme')
+  colorscheme $__vim_colorscheme
 else
   let g:solarized_termcolors=16
   let g:solarized_termtrans=1
