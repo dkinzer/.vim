@@ -1,6 +1,7 @@
 --exclude="\.git"
 --exclude="\.min\.js"
 --langmap=php:.engine.inc.module.theme.php.test
+--recurse=yes
 --PHP-kinds=cfvd
 --languages=php
 --recurse=yes
