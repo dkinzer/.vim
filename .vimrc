@@ -5,6 +5,7 @@ syntax on " syntax highting
 filetype on " Enable filetype detection
 filetype plugin indent on " enable loading indent file for filetypes
 
+
 " Pathogen settings.
 runtime bundle/vim-pathogen/autoload/pathogen.vim bundle\vim-pathogen\autoload\pathogen.vim
 
@@ -73,9 +74,15 @@ if exists($ComSpec)
 endif
 
 call pathogen#infect()
+" Pathogen provides Helptags as a substitute to :helptags
+" It automatically runs helptags on all our bundles.
+Helptags
+
 let g:SuperTabDefaultCompletionType = "context"
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 set completeopt=menuone,longest,preview
+
+
 
 "General settings
 set incsearch               "Find as you type
