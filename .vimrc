@@ -14,7 +14,7 @@ let g:pathogen_disabled = []
 "call add(g:pathogen_disabled, 'delimitMate')
 "call add(g:pathogen_disabled, 'DirDiff')
 "call add(g:pathogen_disabled, 'drupal_snippets')
-call add(g:pathogen_disabled, 'drupalvim')
+"call add(g:pathogen_disabled, 'drupalvim')
 "call add(g:pathogen_disabled, 'easymotion')
 "call add(g:pathogen_disabled, 'fugitive')
 "call add(g:pathogen_disabled, 'fuzzyfinder')
@@ -40,6 +40,7 @@ call add(g:pathogen_disabled, 'PIV')
 "call add(g:pathogen_disabled, 'web-indent')
 "call add(g:pathogen_disabled, 'xdebug')
 "call add(g:pathogen_disabled, 'ZoomWin')
+
 
 "Disable PIV when in windows.
 if exists('$ComSpec')
@@ -99,7 +100,6 @@ set linebreak               "Break lines when appropriate
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set shellcmdflag=-ic         "Interactive shell loads my aliases"
 
-
 "Drupal settings
 set expandtab               "Tab key inserts spaces
 set tabstop=2               "Use two spaces for tabs
@@ -110,7 +110,6 @@ let php_parent_error_open = 1 "Display error for unmatch brackets
 let php_sql_query = 1 "for SQL syntax highlighting inside strings
 let php_parent_error_close = 1 "for highlighting parent error ] or )
 let g:syntastic_phpcs_conf=" --standard=Drupal --extensions=php,module,inc,install,test,profile,theme" "Syntactic checking using Drupal Coding Standard
-
 " let php_folding = 1 "for folding classes and functions
 " let php_sync_method = 0
 "                             x=-1 to sync by search ( default )
@@ -123,19 +122,6 @@ if &t_Co > 1
   syntax enable
 endif
 
-"Set filetype for Drupal PHP files.
-if has("autocmd")
-  augroup module
-    autocmd BufRead,BufNewFile *.module set filetype=php
-    autocmd BufRead,BufNewFile *.php set filetype=php
-    autocmd BufRead,BufNewFile *.install set filetype=php
-    autocmd BufRead,BufNewFile *.inc set filetype=php
-    autocmd BufRead,BufNewFile *.profile set filetype=php
-    autocmd BufRead,BufNewFile *.theme set filetype=php
-    autocmd BufRead,BufNewFile *.test set filetype=php
-  augroup END
-endif
-
 "Custom key mappings
 map <S-u> :redo<cr>
 map <C-n> :tabn<cr>
@@ -146,12 +132,6 @@ map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
-
-" PDV mappings
-inoremap <C-P> :call PhpDocSingle()<CR>i
-nnoremap <C-P> :call PhpDocSingle()<CR>
-vnoremap <C-P> :call PhpDocRange()<CR>
-
 
 " Vim jump to the last position when reopening a file
 if has("autocmd")
@@ -183,7 +163,6 @@ map <leader>j :RopeGotoDefinition<CR>
 map <leader>r :RopeRename<CR>
 map <Leader>t :TagbarToggle<CR>
 map <Leader>tl <Plug>TaskList
-
 
 
 set background=dark
