@@ -23,6 +23,10 @@ let g:pathogen_disabled = []
 "call add(g:pathogen_disabled, 'tabular')
 "call add(g:pathogen_disabled, 'easymotion')
 
+"Disable PIV when in windows.
+if exists('$ComSpec')
+  call add(g:pathogen_disabled, 'PIV')
+endif
 
 " Gundo requires at least vim 7.3
 if v:version < '703' || !has('python')
