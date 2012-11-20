@@ -73,7 +73,9 @@ if exists($ComSpec)
   call add(g:pathogen_disabled, 'PIV')
 endif
 
+call pathogen#infect('~/.vim/bundle/drupalvim/bundle')
 call pathogen#infect()
+
 " Pathogen provides Helptags as a substitute to :helptags
 " It automatically runs helptags on all our bundles.
 Helptags
@@ -81,8 +83,6 @@ Helptags
 let g:SuperTabDefaultCompletionType = "context"
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 set completeopt=menuone,longest,preview
-
-
 
 "General settings
 set incsearch               "Find as you type
