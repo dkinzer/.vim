@@ -31,9 +31,6 @@
 [submodule "bundle/drupalvim"]
 	path = bundle/drupalvim
 	url = http://git.drupal.org/project/vimrc.git
-[submodule "bundle/drupal_snippets"]
-	path = bundle/drupal_snippets
-	url = git://github.com/theunraveler/Drupal-Snippets-for-Vim.git
 [submodule "bundle/gundo"]
 	path = bundle/gundo
 	url = git://github.com/sjl/gundo.vim.git
