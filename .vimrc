@@ -116,7 +116,6 @@ let php_htmlInStrings = 1   "Syntax highlight for HTML inside PHP strings
 let php_parent_error_open = 1 "Display error for unmatch brackets
 let php_sql_query = 1 "for SQL syntax highlighting inside strings
 let php_parent_error_close = 1 "for highlighting parent error ] or )
-let g:syntastic_phpcs_conf=" --standard=Drupal --extensions=php,module,inc,install,test,profile,theme" "Syntactic checking using Drupal Coding Standard
 " let php_folding = 1 "for folding classes and functions
 " let php_sync_method = 0
 "                             x=-1 to sync by search ( default )
