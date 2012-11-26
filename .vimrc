@@ -41,7 +41,7 @@ call add(g:pathogen_disabled, 'PIV')
 "call add(g:pathogen_disabled, 'web-indent')
 "call add(g:pathogen_disabled, 'xdebug')
 "call add(g:pathogen_disabled, 'ZoomWin')
-
+"call add(g:pathogen_disabled, 'z_overrides')
 
 "Disable PIV when in windows.
 if exists('$ComSpec')
@@ -74,6 +74,7 @@ if exists($ComSpec)
 endif
 
 call pathogen#infect('~/.vim/bundle/drupalvim/bundle')
+call pathogen#infect('~\vimfiles\bundle\drupalvim\bundle')
 call pathogen#infect()
 
 " Pathogen provides Helptags as a substitute to :helptags
