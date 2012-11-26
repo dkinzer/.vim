@@ -69,7 +69,7 @@ if !executable("ctags")
   call add(g:pathogen_disabled, 'tagbar')
 endif
 
-if exists($ComSpec)
+if exists('$ComSpec')
   call add(g:pathogen_disabled, 'PIV')
 endif
 
