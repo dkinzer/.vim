@@ -14,61 +14,61 @@ snippet casper
 	 */
 
 	var url  = casper.cli.get("url");
-	var ${1:} = {};
+	var $1 = {};
 
-	${1:}.paths = {
-		${2:path_1_key, base} : '${3:path_1_value}', 
-		${4:path_2_key, add} : '${5:path_2_value}', 
-		${6:path_3_key, edit} : '${7:path_3_value}', 
+	$1.paths = {
+		${2:base} : '${3:}', 
+		${4:add} : '${5:}', 
+		${6:edit} : '${7:}', 
 	};
 
-	var Paths = ${1:}.paths;
+	var Paths = $1.paths;
 
-	${1:}.elements = {};
+	$1.elements = {};
 
-	var Elements = ${1:}.elements;
-	Elements.${2:} = {};
-	Elements.${4:} = {};
-	Elements.${6:}  = {};
+	var Elements = $1.elements;
+	Elements.$2 = {};
+	Elements.$4 = {};
+	Elements.$6  = {};
 
-	// Add selectors for elements to be tested in ${2:} path.
-	Elements.${2:}.${8:selector_key} = '${9:selector_value}';
+	// Add selectors for elements to be tested in $2 path.
+	Elements.$2.${8:element} = '${9:selector}';
 
 	var t = casper.test;
 
 	t.comment('#############################################');
-	t.comment('#      ${1:} Feature Functional Tests.     #');
+	t.comment('#      $1 Feature Functional Tests.     #');
 	t.comment('#############################################');
 	t.comment('');
 	t.comment('---------------------------------------------');
 	t.comment('        Testing the Annonymous User:         ');
 	t.comment('---------------------------------------------');
 
-	casper.start(url + Paths.${2:}}, function(){
-		t.comment('Testing the ${2:} path.');
-		Base = Elements.${2:};
+	casper.start(url + Paths.$2}, function(){
+		t.comment('Testing the $2 path.');
+		Base = Elements.$2;
 
-		var Element = {type : 'xpath', path : Base.${8:}};
+		var Element = {type : 'xpath', path : Base.$8};
 		t.assertExists(Element,"${10:Insert the assertion message here.}" );
 		
 		t.comment('');
 
 	});
 
-	// Add selectors for elements to be tested in ${4:} path.
-	Elements.${4:}.${11:selector_key} = '${12:selector_value}';
+	// Add selectors for elements to be tested in $4 path.
+	Elements.$4.${11:element} = '${12:selector}';
 
-	casper.thenOpen(url + Paths.${4}, function(){
-		t.comment('Testing the ${4:} path.');
+	casper.thenOpen(url + Paths.$4, function(){
+		t.comment('Testing the $4 path.');
 		t.comment('');
 	});
 
 
-	// Add selectors for elements to be tested in ${6:} path.
-	Elements.${6:}.${13:selector_key} = '${14:selector_value}';
+	// Add selectors for elements to be tested in $6 path.
+	Elements.$6.${13:Elementl} = '${14:selector}';
 
-	casper.thenOpen(url + Paths.${6:}, function(){
-		t.comment('Testing the ${2:} path.');
+	casper.thenOpen(url + Paths.$6, function(){
+		t.comment('Testing the $2 path.');
 		t.comment('');
 	});
 
@@ -79,18 +79,18 @@ snippet casper
 		t.comment('---------------------------------------------');
 	});
 
-	casper.thenOpen(url + Paths.${2:}, function('){
-		t.comment('Testing the ${2:} path.');
+	casper.thenOpen(url + Paths.$2, function('){
+		t.comment('Testing the $2 path.');
 		t.comment('');
 	});
 
-	casper.thenOpen(url + Paths.${4:}, function(){
-		t.comment('Testing the ${4:} path.');
+	casper.thenOpen(url + Paths.$4, function(){
+		t.comment('Testing the $4 path.');
 		t.comment('');
 	});
 
-	casper.thenOpen(url + Paths.${6:}, function(){
-		t.comment('Testing the ${6:} path.');
+	casper.thenOpen(url + Paths.$6, function(){
+		t.comment('Testing the $6 path.');
 		t.comment('');
 	});
 
@@ -100,18 +100,18 @@ snippet casper
 		t.comment('---------------------------------------------');
 	});
 
-	casper.thenOpen(url + Paths.${2:}, function('){
-		t.comment('Testing the ${2:} path.');
+	casper.thenOpen(url + Paths.$2, function('){
+		t.comment('Testing the $2 path.');
 		t.comment('');
 	});
 
-	casper.thenOpen(url + Paths.${4:}, function(){
-		t.comment('Testing the ${4:} path.');
+	casper.thenOpen(url + Paths.$4, function(){
+		t.comment('Testing the $4 path.');
 		t.comment('');
 	});
 
-	casper.thenOpen(url + Paths.${6:}, function(){
-		t.comment('Testing the ${6:} path.');
+	casper.thenOpen(url + Paths.$6, function(){
+		t.comment('Testing the $6 path.');
 		t.comment('');
 	});
 
