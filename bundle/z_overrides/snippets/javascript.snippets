@@ -44,7 +44,7 @@ snippet casper
 	t.comment('        Testing the Annonymous User:         ');
 	t.comment('---------------------------------------------');
 
-	casper.start(url + Paths.base, function(){
+	casper.start(url + Paths.${2:}}, function(){
 		t.comment('Testing the ${2:} path.');
 		Base = Elements.${2:};
 
@@ -58,7 +58,7 @@ snippet casper
 	// Add selectors for elements to be tested in ${4:} path.
 	Elements.${4:}.${11:selector_key} = '${12:selector_value}';
 
-	casper.then(function(){
+	casper.thenOpen(url + Paths.${4}, function(){
 		t.comment('Testing the ${4:} path.');
 		t.comment('');
 	});
@@ -67,7 +67,7 @@ snippet casper
 	// Add selectors for elements to be tested in ${6:} path.
 	Elements.${6:}.${13:selector_key} = '${14:selector_value}';
 
-	casper.then(function(){
+	casper.thenOpen(url + Paths.${6:}, function(){
 		t.comment('Testing the ${2:} path.');
 		t.comment('');
 	});
@@ -79,17 +79,17 @@ snippet casper
 		t.comment('---------------------------------------------');
 	});
 
-	casper.then(function(){
+	casper.thenOpen(url + Paths.${2:}, function('){
 		t.comment('Testing the ${2:} path.');
 		t.comment('');
 	});
 
-	casper.then(function(){
+	casper.thenOpen(url + Paths.${4:}, function(){
 		t.comment('Testing the ${4:} path.');
 		t.comment('');
 	});
 
-	casper.then(function(){
+	casper.thenOpen(url + Paths.${6:}, function(){
 		t.comment('Testing the ${6:} path.');
 		t.comment('');
 	});
@@ -100,20 +100,21 @@ snippet casper
 		t.comment('---------------------------------------------');
 	});
 
-	casper.then(function(){
+	casper.thenOpen(url + Paths.${2:}, function('){
 		t.comment('Testing the ${2:} path.');
 		t.comment('');
 	});
 
-	casper.then(function(){
+	casper.thenOpen(url + Paths.${4:}, function(){
 		t.comment('Testing the ${4:} path.');
 		t.comment('');
 	});
 
-	casper.then(function(){
+	casper.thenOpen(url + Paths.${6:}, function(){
 		t.comment('Testing the ${6:} path.');
 		t.comment('');
 	});
+
 	casper.run(function(){
 		t.done();
 	});
