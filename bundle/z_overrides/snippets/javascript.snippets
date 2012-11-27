@@ -19,7 +19,7 @@ snippet casper
 	$1.paths = {
 		${2:base} : '${3:}', 
 		${4:add} : '${5:}', 
-		${6:edit} : '${7:}', 
+		${6:edit} : '${7:}' 
 	};
 
 	var Paths = $1.paths;
@@ -79,7 +79,7 @@ snippet casper
 		t.comment('---------------------------------------------');
 	});
 
-	casper.thenOpen(url + Paths.$2, function('){
+	casper.thenOpen(url + Paths.$2, function(){
 		t.comment('Testing the $2 path.');
 		t.comment('');
 	});
@@ -100,7 +100,7 @@ snippet casper
 		t.comment('---------------------------------------------');
 	});
 
-	casper.thenOpen(url + Paths.$2, function('){
+	casper.thenOpen(url + Paths.$2, function(){
 		t.comment('Testing the $2 path.');
 		t.comment('');
 	});
