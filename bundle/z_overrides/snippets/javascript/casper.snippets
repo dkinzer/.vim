@@ -1,0 +1,17 @@
+#casperjs test suite boilerplate
+snippet casper_anon
+	/*
+	Explanation of the test here
+	*/
+	
+	var url  = casper.cli.get("url");
+	var t = casper.test;
+
+	casper.start(url, function(){
+	  t.comment("${1:Comment}");
+		${2:test logic}
+	});
+
+	casper.run(function(){
+		t.done();
+	});

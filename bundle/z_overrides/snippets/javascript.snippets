@@ -1,0 +1,177 @@
+#casperjs test suite boilerplate
+snippet casper
+	/**
+	 * @file
+	 * ${1:FeatureName} feature qc functional tests.
+	 *
+	 * The tests on this page will be ordered the following way.
+	 * 
+	 * Part 1: The Feature and it's elements are defined.
+	 * Part 2: The Tests Begin:
+	 *   (a)  Test the Annonymous User.
+	 *   (b)  Test the Authenticated User.
+	 *   (c)  Test the Administrative User.
+	 */
+
+	var url  = casper.cli.get("url");
+	var ${1:} = {};
+
+	${1:}.paths = {
+		${2:path_1_key, base} : '${3:path_1_value}', 
+		${4:path_2_key, add} : '${5:path_2_value}', 
+		${6:path_3_key, edit} : '${7:path_3_value}', 
+	};
+
+	var Paths = ${1:}.paths;
+
+	${1:}.elements = {};
+
+	var Elements = ${1:}.elements;
+	Elements.${2:} = {};
+	Elements.${4:} = {};
+	Elements.${6:}  = {};
+
+	// Add selectors for elements to be tested in ${2:} path.
+	Elements.${2:}.${8:selector_key} = '${9:selector_value}';
+
+	var t = casper.test;
+
+	t.comment('#############################################');
+	t.comment('#      ${1:} Feature Functional Tests.     #');
+	t.comment('#############################################');
+	t.comment('');
+	t.comment('---------------------------------------------');
+	t.comment('        Testing the Annonymous User:         ');
+	t.comment('---------------------------------------------');
+
+	casper.start(url + Paths.base, function(){
+		t.comment('Testing the ${2:} path.');
+		Base = Elements.${2:};
+
+		var Element = {type : 'xpath', path : Base.${8:}};
+		t.assertExists(Element,"${10:Insert the assertion message here.}" );
+		
+		t.comment('');
+
+	});
+
+	// Add selectors for elements to be tested in ${4:} path.
+	Elements.${4:}.${11:selector_key} = '${12:selector_value}';
+
+	casper.then(function(){
+		t.comment('Testing the ${4:} path.');
+		t.comment('');
+	});
+
+
+	// Add selectors for elements to be tested in ${6:} path.
+	Elements.${6:}.${13:selector_key} = '${14:selector_value}';
+
+	casper.then(function(){
+		t.comment('Testing the ${2:} path.');
+		t.comment('');
+	});
+
+	casper.then(function(){
+		t.comment('');
+		t.comment('---------------------------------------------');
+		t.comment('       Testing the Authenticated User:       ');
+		t.comment('---------------------------------------------');
+	});
+
+	casper.then(function(){
+		t.comment('Testing the ${2:} path.');
+		t.comment('');
+	});
+
+	casper.then(function(){
+		t.comment('Testing the ${4:} path.');
+		t.comment('');
+	});
+
+	casper.then(function(){
+		t.comment('Testing the ${6:} path.');
+		t.comment('');
+	});
+
+	casper.then(function(){
+		t.comment('---------------------------------------------');
+		t.comment('     Testing the Administrative User:        ');
+		t.comment('---------------------------------------------');
+	});
+
+	casper.then(function(){
+		t.comment('Testing the ${2:} path.');
+		t.comment('');
+	});
+
+	casper.then(function(){
+		t.comment('Testing the ${4:} path.');
+		t.comment('');
+	});
+
+	casper.then(function(){
+		t.comment('Testing the ${6:} path.');
+		t.comment('');
+	});
+	casper.run(function(){
+		t.done();
+	});
+
+snippet casper_login
+	
+	/*
+	${1:Explanation of the test here}
+	*/
+
+	var url  = casper.cli.get("url");
+	var t = casper.test;
+	var username= "${2:user you want to test with}";
+
+	casper.start(url, function(){
+		t.comment("${3:Comment to display in console when test runs}");
+		_login_user(this,username);
+	});
+
+	casper.then(function() {
+		t.${4:Test something}
+	});
+
+	casper.then(function(){
+		_logout_user(this); 
+	})
+
+	casper.run(function(){
+		t.done();
+	});
+
+
+snippet casper_multi_login  
+	/*
+	${1:Explanation of the test here}
+	*/
+
+	var url  = casper.cli.get("url");
+	var t = casper.test;
+	var usernames = ${2:Array of usernames};
+
+	casper.start().each(usernames, function(self,username){
+
+		self.thenOpen(url, function(){
+			t.comment("${3:Comment to appear in console while running}");
+			_login_user(this,username);
+			
+		});
+		
+		self.then(function(){
+			t.${4:Test something}
+		});
+
+		self.then(function() {
+			_logout_user(this);
+		});
+	});
+
+	casper.run(function(){
+		t.done();
+	});
