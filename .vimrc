@@ -185,12 +185,14 @@ if exists('$ComSpec')
 elseif exists('$__vim_colorscheme')
   colorscheme $__vim_colorscheme
 else
-  let g:solarized_termcolors=16
-  let g:solarized_termtrans=1
-  let g:solorized_bold=0
-  set t_Co=256
   colorscheme solarized
 endif
+
+if g:colors_name == 'solarized'
+  set t_Co=256
+endif
+
+
 
 set statusline=%t       "tail of the filename
 set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
