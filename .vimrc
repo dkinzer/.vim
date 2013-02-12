@@ -180,7 +180,9 @@ map <Leader>tl <Plug>TaskList
 
 set background=dark
 
-if exists('$ComSpec')
+if exists('$ConEmuArgs')
+  colorscheme solarized
+elseif exists('$ComSpec')
   colorscheme vividchalk 
 elseif exists('$__vim_colorscheme')
   colorscheme $__vim_colorscheme
