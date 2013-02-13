@@ -179,6 +179,7 @@ map <Leader>tl <Plug>TaskList
 
 
 set background=dark
+let g:soloarized_termcolors=256
 
 if exists('$ConEmuArgs')
   colorscheme solarized
@@ -190,9 +191,6 @@ else
   colorscheme solarized
 endif
 
-if g:colors_name == 'solarized'
-  set t_Co=256
-endif
 
 
 
