@@ -111,7 +111,7 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 " Interactive shell loads my aliases.
 " Not to be enabled on windows system.
 if !exists('$ComSpec')
-  set shellcmdflag=-ic
+  "set shellcmdflag=-ic
 endif
 
 "Drupal settings
