@@ -180,13 +180,14 @@ map <Leader>tl <Plug>TaskList
 
 set background=dark
 let g:soloarized_termcolors=256
+set t_Co=16
 
-if exists('$ConEmuArgs')
-  colorscheme solarized
+if exists('$__vim_colorscheme')
+  colorscheme $__vim_colorscheme
 elseif exists('$ComSpec')
   colorscheme vividchalk 
-elseif exists('$__vim_colorscheme')
-  colorscheme $__vim_colorscheme
+elseif exists('$ConEmuArgs')
+  colorscheme solarized
 else
   colorscheme solarized
 endif
