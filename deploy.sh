@@ -14,8 +14,11 @@ else
   git pull origin master
 fi
 
-log "Link the .vimrc"
+log "Link the .vimrc config file."
 ln -fs ~/.vim/.vimrc ~/.vimrc
+
+log "Link the .ctags config file."
+ln -fs ~/.vim/.ctags ~/.ctags
 
 log "Upate the submodules."
 git submodule init
