@@ -4,6 +4,7 @@ set nocompatible
 syntax on " syntax highting
 filetype on " Enable filetype detection
 filetype plugin indent on " enable loading indent file for filetypes
+setlocal spell spelllang=en_us
 
 
 " Pathogen settings.
