@@ -1,3 +1,4 @@
+
 " Allow Vim-only settings even if they break vi keybindings.
 set nocompatible
 
@@ -42,6 +43,7 @@ call add(g:pathogen_disabled, 'PIV')
 "call add(g:pathogen_disabled, 'tagbar')
 "call add(g:pathogen_disabled, 'tasklist')
 "call add(g:pathogen_disabled, 'tlib')
+"call add(g:pathogen_disabled, 'vdebug')
 "call add(g:pathogen_disabled, 'vim-classpath')
 "call add(g:pathogen_disabled, 'vim-chef')
 "call add(g:pathogen_disabled, 'vim-colors-solarize')
@@ -49,7 +51,6 @@ call add(g:pathogen_disabled, 'PIV')
 "call add(g:pathogen_disabled, 'vim-pathogen')
 "call add(g:pathogen_disabled, 'vividchalk')
 "call add(g:pathogen_disabled, 'web-indent')
-"call add(g:pathogen_disabled, 'xdebug')
 "call add(g:pathogen_disabled, 'ZoomWin')
 "call add(g:pathogen_disabled, 'z_overrides')
 "

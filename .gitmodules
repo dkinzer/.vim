@@ -55,9 +55,6 @@
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
-[submodule "bundle/xdebug"]
-	path = bundle/xdebug
-	url = git://github.com/vim-scripts/XDebug-DBGp-client-for-PHP.git
 [submodule "bundle/PIV"]
 	path = bundle/PIV
 	url = git://github.com/spf13/PIV.git
@@ -112,3 +109,6 @@
 [submodule "bundle/paredit"]
 	path = bundle/paredit
 	url = https://github.com/vim-scripts/paredit.vim.git
+[submodule "bundle/vdebug"]
+	path = bundle/vdebug
+	url = git://github.com/joonty/vdebug.git
