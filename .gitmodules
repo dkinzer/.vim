@@ -112,3 +112,6 @@
 [submodule "bundle/vdebug"]
 	path = bundle/vdebug
 	url = git://github.com/joonty/vdebug.git
+[submodule "bundle/Dockerfile"]
+	path = bundle/Dockerfile
+	url = https://github.com/ekalinin/Dockerfile.vim.git

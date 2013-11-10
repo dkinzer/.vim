@@ -16,6 +16,7 @@ let g:pathogen_disabled = []
 "call add(g:pathogen_disabled, 'ack')
 "call add(g:pathogen_disabled, 'delimitMate')
 "call add(g:pathogen_disabled, 'DirDiff')
+"call add(g:pathogen_disabled, 'Dockerfile')
 "call add(g:pathogen_disabled, 'drupal_snippets')
 "call add(g:pathogen_disabled, 'drupalvim')
 "call add(g:pathogen_disabled, 'easymotion')
