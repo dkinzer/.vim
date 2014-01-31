@@ -1,24 +1,23 @@
 <?php
-class `Filename()` extends DrupalWebTestCase {
+class `Filename()`TestCase extends DrupalWebTestCase {
 	protected $privaleged_user;
 
+	/**
+	 * Overrides parent::getInfo()
+	 */
 	public static function getInfo() {
 		return array(
 			'name' => '${1:name}',
 			'description' => '${2:description}',
-			'group' =>'${3:groupName}',
+			'group' => '${3:groupName}',
 		);
 	}
 
-	public function setUp() {
-		parent::setUp('${4:moduleName}');
 
-		$this->privaleged_user = $this->drupalCreateUser(array('${5:permission}'));
-		$this->drupalLogin($this->privileged_user);
-	}
-
-	public function test${6:testLabel}() {
-		${7};
+    /**
+	 * ${4:first_test_discription}.
+	 */
+	public function test${4:testLabel}() {
+		${5};
 	}
 }
-?>
