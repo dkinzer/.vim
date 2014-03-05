@@ -304,12 +304,5 @@ let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 " Turn off delimateMate (which provides auto-closing parens) for lisp files
 " " as they just get in the way
 au! FileType clojure let b:loaded_delimitMate=1
-au! FileType lisp let b:loaded_delimitMate=1
 au! FileType racket let b:loaded_delimitMate=1
 au! FileType scheme let b:loaded_delimitMate=1
-
-" Auto enable rainbow parenthesis for lisps.
-au! FileType scheme RainbowParenthesesToggle
-au! FileType lisp RainbowParenthesesToggle
-au! FileType clojure RainbowParenthesesToggle
-au! FileType racket RainbowParenthesesToggle
