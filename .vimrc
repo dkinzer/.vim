@@ -308,7 +308,7 @@ au! FileType lisp let b:loaded_delimitMate=1
 au! FileType racket let b:loaded_delimitMate=1
 au! FileType scheme let b:loaded_delimitMate=1
 
-" Auto enable rainbow parenthesis for lips.
+" Auto enable rainbow parenthesis for lisps.
 au! FileType scheme RainbowParenthesesToggle
 au! FileType lisp RainbowParenthesesToggle
 au! FileType clojure RainbowParenthesesToggle
