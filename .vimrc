@@ -302,6 +302,8 @@ let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
-" Turn off delimateMate (which provides auto-closing parens) for Clojure files
+" Turn off delimateMate (which provides auto-closing parens) for lisp files
 " " as they just get in the way
 au! FileType clojure let b:loaded_delimitMate=1
+au! FileType racket let b:loaded_delimitMate=1
+au! FileType scheme let b:loaded_delimitMate=1
