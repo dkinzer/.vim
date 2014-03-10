@@ -180,8 +180,6 @@ nnoremap <Leader>dv :execute "!drush vget ".shellescape(expand("<cword>"), 1)<CR
 map <leader>n :NERDTreeToggle<CR>
 map <Leader>g :GundoToggle<CR>
 map <Leader>a <Esc>:Ack! 
-map <leader>j :RopeGotoDefinition<CR>
-map <leader>r :RopeRename<CR>
 map <Leader>t :TagbarToggle<CR>
 map <Leader>tl <Plug>TaskList
 
