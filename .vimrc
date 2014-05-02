@@ -134,6 +134,8 @@ set expandtab               "Tab key inserts spaces
 set tabstop=2               "Use two spaces for tabs
 set shiftwidth=2            "Use two spaces for auto-indent
 set autoindent              "Auto indent based on previous line
+set foldmethod=marker
+set foldlevel=0
 let php_htmlInStrings = 1   "Syntax highlight for HTML inside PHP strings
 let php_parent_error_open = 1 "Display error for unmatch brackets
 let php_sql_query = 1 "for SQL syntax highlighting inside strings
