@@ -1,4 +1,4 @@
-" {{{1 Enable Disable
+" {{{1 Enable and disable bundles.
 " Pathogen settings.
 runtime bundle/vim-pathogen/autoload/pathogen.vim bundle\vim-pathogen\autoload\pathogen.vim
 
@@ -87,8 +87,6 @@ call pathogen#infect()
 Helptags
 
 "{{{1 General settings.
-" Allow Vim-only settings even if they break vi keybindings.
-syntax on " syntax highting
 filetype on " Enable filetype detection
 filetype plugin indent on " enable loading indent file for filetypes
 setlocal spell spelllang=en_us
@@ -114,45 +112,8 @@ set formatoptions=1         "Don't wrap text after a one-letter word
 set linebreak               "Break lines when appropriate
 "set list                    "show invisible characters
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-let NERDTreeIgnore=['\.bin$', '\.c$', '\.o$', '\.so$', '\.bci$']
-
-" Interactive shell loads my aliases.
-" Not to be enabled on windows system.
-if !exists('$ComSpec')
-  "set shellcmdflag=-ic
-endif
-
-" {{{1 Supertab settings.
-let g:SuperTabDefaultCompletionType = "context"
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-set completeopt=menuone,longest,preview
-
-"{{{1Drupal settings.
-set expandtab               "Tab key inserts spaces
-set tabstop=2               "Use two spaces for tabs
-set shiftwidth=2            "Use two spaces for auto-indent
-set autoindent              "Auto indent based on previous line
 set foldmethod=marker
 set foldlevel=0
-let php_htmlInStrings = 1   "Syntax highlight for HTML inside PHP strings
-let php_parent_error_open = 1 "Display error for unmatch brackets
-let php_sql_query = 1 "for SQL syntax highlighting inside strings
-let php_parent_error_close = 1 "for highlighting parent error ] or )
-" let php_folding = 1 "for folding classes and functions
-" let php_sync_method = 0
-"                             x=-1 to sync by search ( default )
-"                             x>0 to sync at least x lines backwards
-"                             x=0 to sync from start
-
-"Enable syntax highlighting
-if &t_Co > 1
-  syntax enable
-endif
-
-"Custom key mappings
-map <S-u> :redo<cr>
-map <C-n> :tabn<cr>
-map <C-p> :tabp<cr>
 
 " Vim jump to the last position when reopening a file
 if has("autocmd")
@@ -160,33 +121,23 @@ if has("autocmd")
  \| exe "normal! g'\"" | endif
 endif
 
-" Highlight long comments and trailing whitespace.
-  if has("matchadd")
-    highlight ExtraWhitespace ctermbg=red guibg=red
-    let a = matchadd('ExtraWhitespace', '\s\+$')
-    highlight OverLength ctermbg=red ctermfg=white guibg=red guifg=white
-    let b = matchadd('OverLength', '\(^\(\s\)\{-}\(*\|//\|/\*\)\{1}\(.\)*\(\%81v\)\)\@<=\(.\)\{1,}$')
-  endif
+" Interactive shell loads my aliases.
+" Not to be enabled on windows system.
+if !exists('$ComSpec')
+  "set shellcmdflag=-ic
+endif
 
-" Lookup the API docs for a drupal function under cursor.
-nnoremap <Leader>da :execute "!open http://api.drupal.org/".shellescape(expand("<cword>"), 1)<CR>
-" Lookup the API docs for a drush function under cursor.
-nnoremap <Leader>dda :execute "!open http://api.drush.ws/api/function/".shellescape(expand("<cword>"), 1)<CR>
-" Get the value of the drupal variable under cursor.
-nnoremap <Leader>dv :execute "!drush vget ".shellescape(expand("<cword>"), 1)<CR>
+" {{{1 Highlighting and color scheme.
+syntax on " syntax highting
 
-
-" Leader here can be set to athing.  The default is \
-map <leader>n :NERDTreeToggle<CR>
-map <Leader>g :GundoToggle<CR>
-map <Leader>a <Esc>:Ack! 
-map <Leader>t :TagbarToggle<CR>
-map <Leader>tl <Plug>TaskList
+"Enable syntax highlighting
+if &t_Co > 1
+  syntax enable
+endif
 
 set background=dark
 let g:soloarized_termcolors=256
 set t_Co=16
-
 if exists('$__vim_colorscheme')
   colorscheme $__vim_colorscheme
 elseif exists('$ComSpec')
@@ -197,6 +148,15 @@ else
   colorscheme solarized
 endif
 
+" Highlight long comments and trailing whitespace.
+if has("matchadd")
+  highlight ExtraWhitespace ctermbg=red guibg=red
+  let a = matchadd('ExtraWhitespace', '\s\+$')
+  highlight OverLength ctermbg=red ctermfg=white guibg=red guifg=white
+  let b = matchadd('OverLength', '\(^\(\s\)\{-}\(*\|//\|/\*\)\{1}\(.\)*\(\%81v\)\)\@<=\(.\)\{1,}$')
+endif
+
+"{{{1 Status line.
 set statusline=%t       "tail of the filename
 set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
 set statusline+=%{&ff}] "file format
@@ -214,9 +174,47 @@ if filereadable("/var/www/html/dkinzer/website/tags")
   set tags=./tags,/var/www/html/dkinzer/website/tags
 endif
 
+" {{{1 Indentation.
+set expandtab               "Tab key inserts spaces
+set tabstop=2               "Use two spaces for tabs
+set shiftwidth=2            "Use two spaces for auto-indent
+set autoindent              "Auto indent based on previous line
+" {{{1 Supertab settings.
+let g:SuperTabDefaultCompletionType = "context"
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+set completeopt=menuone,longest,preview
+
+"{{{1Drupal settings.
+let php_htmlInStrings = 1   "Syntax highlight for HTML inside PHP strings
+let php_parent_error_open = 1 "Display error for unmatch brackets
+let php_sql_query = 1 "for SQL syntax highlighting inside strings
+let php_parent_error_close = 1 "for highlighting parent error ] or )
+" let php_folding = 1 "for folding classes and functions
+" let php_sync_method = 0
+"                             x=-1 to sync by search ( default )
+"                             x>0 to sync at least x lines backwards
+"                             x=0 to sync from start
+
+" Lookup the API docs for a drupal function under cursor.
+nnoremap <Leader>da :execute "!open http://api.drupal.org/".shellescape(expand("<cword>"), 1)<CR>
+" Lookup the API docs for a drush function under cursor.
+nnoremap <Leader>dda :execute "!open http://api.drush.ws/api/function/".shellescape(expand("<cword>"), 1)<CR>
+" Get the value of the drupal variable under cursor.
+nnoremap <Leader>dv :execute "!drush vget ".shellescape(expand("<cword>"), 1)<CR>
+
+"{{{1 Custom key mappings.
+map <S-u> :redo<cr>
+map <C-n> :tabn<cr>
+map <C-p> :tabp<cr>
+map <leader>n :NERDTreeToggle<CR>
+map <Leader>g :GundoToggle<CR>
+map <Leader>a <Esc>:Ack! 
+map <Leader>t :TagbarToggle<CR>
+map <Leader>tl <Plug>TaskList
+
 "{{{1  Nerd Tree settings.
 let g:NERDTreeDirArrows=0
-
+let NERDTreeIgnore=['\.bin$', '\.c$', '\.o$', '\.so$', '\.bci$']
 " {{{1 Neocomplcache settings.
 "
 " Disable AutoComplPop. Comment out this line if AutoComplPop is not installed.
