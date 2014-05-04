@@ -156,6 +156,11 @@ if has("matchadd")
   let b = matchadd('OverLength', '\(^\(\s\)\{-}\(*\|//\|/\*\)\{1}\(.\)*\(\%81v\)\)\@<=\(.\)\{1,}$')
 endif
 
+" {{{1 Indentation.
+set expandtab               "Tab key inserts spaces
+set tabstop=2               "Use two spaces for tabs
+set shiftwidth=2            "Use two spaces for auto-indent
+set autoindent              "Auto indent based on previous line
 "{{{1 Status line.
 set statusline=%t       "tail of the filename
 set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
@@ -173,16 +178,6 @@ set statusline+=%{fugitive#statusline()}
 if filereadable("/var/www/html/dkinzer/website/tags")
   set tags=./tags,/var/www/html/dkinzer/website/tags
 endif
-
-" {{{1 Indentation.
-set expandtab               "Tab key inserts spaces
-set tabstop=2               "Use two spaces for tabs
-set shiftwidth=2            "Use two spaces for auto-indent
-set autoindent              "Auto indent based on previous line
-" {{{1 Supertab settings.
-let g:SuperTabDefaultCompletionType = "context"
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-set completeopt=menuone,longest,preview
 
 "{{{1Drupal settings.
 let php_htmlInStrings = 1   "Syntax highlight for HTML inside PHP strings
@@ -275,6 +270,11 @@ let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+
+" {{{1 Supertab settings.
+let g:SuperTabDefaultCompletionType = "context"
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+set completeopt=menuone,longest,preview
 
 " {{{1 Lisp settings.
 " Turn off delimateMate (which provides auto-closing parens) for lisp files
