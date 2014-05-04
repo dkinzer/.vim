@@ -1,13 +1,4 @@
-
-" Allow Vim-only settings even if they break vi keybindings.
-set nocompatible
-
-syntax on " syntax highting
-filetype on " Enable filetype detection
-filetype plugin indent on " enable loading indent file for filetypes
-setlocal spell spelllang=en_us
-
-
+" {{{1 Enable Disable
 " Pathogen settings.
 runtime bundle/vim-pathogen/autoload/pathogen.vim bundle\vim-pathogen\autoload\pathogen.vim
 
@@ -57,7 +48,6 @@ call add(g:pathogen_disabled, 'PIV')
 "call add(g:pathogen_disabled, 'ZoomWin')
 "call add(g:pathogen_disabled, 'z_overrides')
 "
-
 "Disable PIV when in windows.
 if exists('$ComSpec')
   call add(g:pathogen_disabled, 'PIV')
@@ -96,11 +86,14 @@ call pathogen#infect()
 " It automatically runs helptags on all our bundles.
 Helptags
 
-let g:SuperTabDefaultCompletionType = "context"
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-set completeopt=menuone,longest,preview
+"{{{1 General settings.
+" Allow Vim-only settings even if they break vi keybindings.
+syntax on " syntax highting
+filetype on " Enable filetype detection
+filetype plugin indent on " enable loading indent file for filetypes
+setlocal spell spelllang=en_us
 
-"General settings
+set nocompatible
 set incsearch               "Find as you type
 set ignorecase              "Ignore case in search
 set scrolloff=2             "Number of lines to keep above/below cursor
@@ -123,14 +116,18 @@ set linebreak               "Break lines when appropriate
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 let NERDTreeIgnore=['\.bin$', '\.c$', '\.o$', '\.so$', '\.bci$']
 
-
 " Interactive shell loads my aliases.
 " Not to be enabled on windows system.
 if !exists('$ComSpec')
   "set shellcmdflag=-ic
 endif
 
-"Drupal settings
+" {{{1 Supertab settings.
+let g:SuperTabDefaultCompletionType = "context"
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+set completeopt=menuone,longest,preview
+
+"{{{1Drupal settings.
 set expandtab               "Tab key inserts spaces
 set tabstop=2               "Use two spaces for tabs
 set shiftwidth=2            "Use two spaces for auto-indent
@@ -146,7 +143,6 @@ let php_parent_error_close = 1 "for highlighting parent error ] or )
 "                             x=-1 to sync by search ( default )
 "                             x>0 to sync at least x lines backwards
 "                             x=0 to sync from start
-
 
 "Enable syntax highlighting
 if &t_Co > 1
@@ -187,7 +183,6 @@ map <Leader>a <Esc>:Ack!
 map <Leader>t :TagbarToggle<CR>
 map <Leader>tl <Plug>TaskList
 
-
 set background=dark
 let g:soloarized_termcolors=256
 set t_Co=16
@@ -202,9 +197,6 @@ else
   colorscheme solarized
 endif
 
-
-
-
 set statusline=%t       "tail of the filename
 set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
 set statusline+=%{&ff}] "file format
@@ -218,16 +210,15 @@ set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P    "percent through file
 set statusline+=%{fugitive#statusline()}
 
-
 if filereadable("/var/www/html/dkinzer/website/tags")
   set tags=./tags,/var/www/html/dkinzer/website/tags
 endif
 
-
-" Nerd Tree settings.
+"{{{1  Nerd Tree settings.
 let g:NERDTreeDirArrows=0
 
-" Neocomplcache settins.
+" {{{1 Neocomplcache settings.
+"
 " Disable AutoComplPop. Comment out this line if AutoComplPop is not installed.
 let g:acp_enableAtStartup = 0
 " Launches neocomplcache automatically on vim startup.
@@ -242,7 +233,6 @@ let g:neocomplcache_enable_underbar_completion = 1
 let g:neocomplcache_min_syntax_length = 3
 " buffer file name pattern that locks neocomplcache. e.g. ku.vim or fuzzyfinder 
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-
 " Define file-type dependent dictionaries.
 let g:neocomplcache_dictionary_filetype_lists = {
     \ 'default' : '',
@@ -255,36 +245,21 @@ if !exists('g:neocomplcache_keyword_patterns')
   let g:neocomplcache_keyword_patterns = {}
 endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
-
 " Plugin key-mappings.
 imap <C-k>     <Plug>(neocomplcache_snippets_expand)
 smap <C-k>     <Plug>(neocomplcache_snippets_expand)
 inoremap <expr><C-g>     neocomplcache#undo_completion()
 inoremap <expr><C-l>     neocomplcache#complete_common_string()
-
-" SuperTab like snippets behavior.
-"imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
 inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
-
-" AutoComplPop like behavior.
-"let g:neocomplcache_enable_auto_select = 1
-
-" Shell like behavior(not recommended).
-"set completeopt+=longest
-"let g:neocomplcache_enable_auto_select = 1
-"let g:neocomplcache_disable_auto_complete = 1
-"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<TAB>"
-"inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
 
 " Enable omni completion. Not required if they are already set elsewhere in .vimrc
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -303,6 +278,7 @@ let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
+" {{{1 Lisp settings.
 " Turn off delimateMate (which provides auto-closing parens) for lisp files
 " " as they just get in the way
 au! FileType clojure let b:loaded_delimitMate=1
