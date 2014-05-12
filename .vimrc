@@ -41,6 +41,8 @@ call add(g:pathogen_disabled, 'PIV')
 "call add(g:pathogen_disabled, 'vim-chef')
 "call add(g:pathogen_disabled, 'vim-colors-solarize')
 "call add(g:pathogen_disabled, 'vim-clojure')
+" vim-niji: A rainbow parentheses plugin.
+"call add(g:pathogen_disabled, 'vim-niji')
 "call add(g:pathogen_disabled, 'vim-pathogen')
 "call add(g:pathogen_disabled, 'vim-schemer')
 "call add(g:pathogen_disabled, 'vividchalk')
@@ -141,7 +143,7 @@ set t_Co=16
 if exists('$__vim_colorscheme')
   colorscheme $__vim_colorscheme
 elseif exists('$ComSpec')
-  colorscheme vividchalk 
+  colorscheme vividchalk
 elseif exists('$ConEmuArgs')
   colorscheme solarized
 else
@@ -208,7 +210,7 @@ map <C-n> :tabn<cr>
 map <C-p> :tabp<cr>
 map <leader>n :NERDTreeToggle<CR>
 map <Leader>g :GundoToggle<CR>
-map <Leader>a <Esc>:Ack! 
+map <Leader>a <Esc>:Ack!
 map <Leader>t :TagbarToggle<CR>
 map <Leader>tl <Plug>TaskList
 
@@ -229,7 +231,7 @@ let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_underbar_completion = 1
 " Sets minimum char length of syntax keyword.
 let g:neocomplcache_min_syntax_length = 3
-" buffer file name pattern that locks neocomplcache. e.g. ku.vim or fuzzyfinder 
+" buffer file name pattern that locks neocomplcache. e.g. ku.vim or fuzzyfinder
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 " Define file-type dependent dictionaries.
 let g:neocomplcache_dictionary_filetype_lists = {
@@ -266,7 +268,7 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-" Enable heavy omni completion, which require computational power and may stall the vim. 
+" Enable heavy omni completion, which require computational power and may stall the vim.
 if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
 endif
