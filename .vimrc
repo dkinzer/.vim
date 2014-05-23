@@ -211,7 +211,7 @@ map <Leader>tl <Plug>TaskList
 
 "{{{1  Nerd Tree settings.
 let g:NERDTreeDirArrows=0
-let NERDTreeIgnore=['\.bin$', '\.c$', '\.o$', '\.so$', '\.bci$']
+let NERDTreeIgnore=['\.bin$', '\.c$', '\.o$', '\.so$', '\.bci$', '\.com$']
 " {{{1 Neocomplcache settings.
 "
 " Disable AutoComplPop. Comment out this line if AutoComplPop is not installed.
