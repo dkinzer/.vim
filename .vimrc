@@ -41,6 +41,7 @@ call add(g:pathogen_disabled, 'PIV')
 "call add(g:pathogen_disabled, 'vim-chef')
 "call add(g:pathogen_disabled, 'vim-colors-solarize')
 "call add(g:pathogen_disabled, 'vim-clojure')
+"call add(g:pathogen_disabled, 'vim-haml')
 " vim-niji: A rainbow parentheses plugin.
 "call add(g:pathogen_disabled, 'vim-niji')
 "call add(g:pathogen_disabled, 'vim-pathogen')
