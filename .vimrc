@@ -159,11 +159,6 @@ if has("matchadd")
   let b = matchadd('OverLength', '\(^\(\s\)\{-}\(*\|//\|/\*\)\{1}\(.\)*\(\%81v\)\)\@<=\(.\)\{1,}$')
 endif
 
-" {{{1 Indentation.
-set expandtab               "Tab key inserts spaces
-set tabstop=2               "Use two spaces for tabs
-set shiftwidth=2            "Use two spaces for auto-indent
-set autoindent              "Auto indent based on previous line
 "{{{1 Status line.
 set statusline=%t       "tail of the filename
 set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
@@ -285,3 +280,8 @@ set completeopt=menuone,longest,preview
 au! FileType clojure let b:loaded_delimitMate=1
 au! FileType racket let b:loaded_delimitMate=1
 au! FileType scheme let b:loaded_delimitMate=1
+" {{{1 Indentation.
+set expandtab               "Tab key inserts spaces
+set tabstop=2               "Use two spaces for tabs
+set shiftwidth=2            "Use two spaces for auto-indent
+set autoindent              "Auto indent based on previous line
