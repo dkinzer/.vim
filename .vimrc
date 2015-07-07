@@ -16,6 +16,7 @@ let g:pathogen_disabled = []
 "call add(g:pathogen_disabled, 'fuzzyfinder')
 "call add(g:pathogen_disabled, 'fireplace')
 "call add(g:pathogen_disabled, 'git')
+"call add(g:pathogen_disabled, 'gist-vim')
 "call add(g:pathogen_disabled, 'go')
 "call add(g:pathogen_disabled, 'gundo')
 "call add(g:pathogen_disabled, 'L9')
