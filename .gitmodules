@@ -168,7 +168,7 @@
   ignore = untracked
 [submodule "bundle/vim-niji"]
 	path = bundle/vim-niji
-	url = https://github.com/amdt/vim-niji.git
+	url = https://github.com/vim-scripts/vim-niji.git
   ignore = untracked
 [submodule "bundle/vim-haml"]
 	path = bundle/vim-haml
