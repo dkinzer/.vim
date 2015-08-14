@@ -166,10 +166,6 @@
 	path = bundle/vim-schemer
 	url = git://github.com/dkinzer/vim-schemer.git
   ignore = untracked
-[submodule "bundle/vim-niji"]
-	path = bundle/vim-niji
-	url = https://github.com/vim-scripts/vim-niji.git
-  ignore = untracked
 [submodule "bundle/vim-haml"]
 	path = bundle/vim-haml
 	url = git://github.com/tpope/vim-haml.git
@@ -179,3 +175,6 @@
 [submodule "bundle/webapi-vim"]
 	path = bundle/webapi-vim
 	url = git://github.com/mattn/webapi-vim.git
+[submodule "bundle/vim-niji"]
+	path = bundle/vim-niji
+	url = https://github.com/vim-scripts/vim-niji.git
