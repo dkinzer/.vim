@@ -27,7 +27,7 @@ let g:pathogen_disabled = []
 "call add(g:pathogen_disabled, 'nerdcommenter')
 "call add(g:pathogen_disabled, 'nerdtree')
 "call add(g:pathogen_disabled, 'paredit')
-call add(g:pathogen_disabled, 'PIV')
+"call add(g:pathogen_disabled, 'PIV')
 "call add(g:pathogen_disabled, 'snipmate')
 "call add(g:pathogen_disabled, 'solarized')
 "call add(g:pathogen_disabled, 'supertab')
