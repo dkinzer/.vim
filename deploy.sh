@@ -19,6 +19,6 @@ git submodule init
 git submodule update
 
 log "Link dotfiles"
-for file in $(find ./dotfiles -type f); do
+for file in $(find ./dotfiles -type f -exec basename {} \;); do
   ln -fs ~/.vim/dotfiles/$file ~/$file
 done;
