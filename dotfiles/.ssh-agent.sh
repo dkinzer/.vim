@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# Only run if this is not an SSH session (SSH_CONNECTION is not set)
-if [ -z "$SSH_CONNECTION" ]; then
+# Only run if in SSH session:
+if [ -n "$SSH_CONNECTION" ]; then
   SSH_ENV="$HOME/.ssh/environment"
   function start_agent {
     echo "Initialising new SSH agent..."

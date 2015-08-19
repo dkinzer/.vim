@@ -23,5 +23,11 @@ PS1="$BLUE\u$RED\$(date +%H:%M)[\w]\n($GREEN\W$RED)$YELLOW\$(__git_ps1 '(%s)')$G
 #{{{1 Extras
 set -o vi
 
+# Auto ssh-agent.
+if [ -e ~/.ssh-agent.sh ]; then
+  source ~/.ssh-agent.sh
+fi
+
+
 
 
