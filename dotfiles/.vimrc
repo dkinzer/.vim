@@ -285,3 +285,6 @@ set expandtab               "Tab key inserts spaces
 set tabstop=2               "Use two spaces for tabs
 set shiftwidth=2            "Use two spaces for auto-indent
 set autoindent              "Auto indent based on previous line
+
+" {{{1 PIV settings.
+g:DisableAutoPHPFolding = 1
