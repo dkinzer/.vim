@@ -287,4 +287,5 @@ set shiftwidth=2            "Use two spaces for auto-indent
 set autoindent              "Auto indent based on previous line
 
 " {{{1 PIV settings.
-g:DisableAutoPHPFolding = 1
+let php_folding=0
+"let g:DisableAutoPHPFolding=1
