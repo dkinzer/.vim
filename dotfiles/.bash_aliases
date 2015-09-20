@@ -28,6 +28,21 @@ if [ -e ~/.ssh-agent.sh ]; then
   source ~/.ssh-agent.sh
 fi
 
+# Conditionally add paths to $PATH
+composer_bin=~/.composer/vendor/bin
+if [ -d $composer_bin ]; then
+  case ":${PATH:=$composer_bin}:" in
+    *:$composer_bin:*)  ;;
+    *) export PATH="$composer_bin:$PATH"  ;;
+  esac
+fi
 
+home_bin=~/bin
+if [ -d $home_bin ]; then
+  case ":${PATH:=$home_bin}:" in
+    *:$home_bin:*)  ;;
+    *) export PATH="$home_bin:$PATH"  ;;
+  esac
+fi
 
 

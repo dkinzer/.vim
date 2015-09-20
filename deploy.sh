@@ -22,3 +22,9 @@ log "Link dotfiles"
 for file in $(find ./dotfiles -type f -exec basename {} \;); do
   ln -fs ~/.vim/dotfiles/$file ~/$file
 done;
+
+log "Link commands"
+mkdir -p ~/bin
+for file in $(find ./bin -type f -exec basename {} \;); do
+  ln -fs ~/.vim/bin/$file ~/bin/$file
+done;
