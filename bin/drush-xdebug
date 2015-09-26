@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 
-export XDEBUG_CONFIG="idekey=xdebug"
-~/.composer/vendor/bin/phpunit "$@"
-
+export PHP_OPTIONS="-dxdebug.remote_autostart=On -didekey=xdebug -dremote_host=localhost -dprofiler_enable=1"
+drush "$@"
