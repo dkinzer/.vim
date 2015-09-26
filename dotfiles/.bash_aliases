@@ -20,6 +20,10 @@ WHITE="\[\033[0;37m\]"
 COLUMNS=250
 PS1="$BLUE\u$RED\$(date +%H:%M)[\w]\n($GREEN\W$RED)$YELLOW\$(__git_ps1 '(%s)')$GREEN\$$WHITE"
 
+# Mac Colors.
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+
 #{{{1 Extras
 set -o vi
 
