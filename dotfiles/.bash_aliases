@@ -5,22 +5,18 @@ alias irc="weechat-curses"
 alias git=hub
 alias tmux='TERM=screen-256color tmux' 
 
-export webroot='/var/www/healthdata/docroot'
-export website='/var/www/healthdata/docroot/sites/all/modules/'
-export profiles='/var/www/healthdata/docroot/profiles/dkan/modules/dkan'
+projects=( healthdata usda-nal )
+for project in ${projects[@]}
+do
+  c=${project:0:1}
+  export ${c}webroot="/var/www/$project/docroot"
+  export ${c}website="/var/www/$project/docroot/sites/all/modules"
+  export ${c}profiles="/var/www/$project/docroot/profiles/dkan/modules/dkan"
 
-export uwebroot='/var/www/usda-nal/docroot'
-export uwebsite='/var/www/usda-nal/docroot/sites/all/modules/'
-export uprofiles='/var/www/usda-nal/docroot/profiles/dkan/modules/dkan'
-
-alias profiles="cd $profiles"
-alias webroot="cd $webroot"
-alias website="cd $website"
-
-alias uprofiles="cd $uprofiles"
-alias uwebroot="cd $uwebroot"
-alias uwebsite="cd $uwebsite"
-
+  alias ${c}profiles="cd \$${c}profiles"
+  alias ${c}webroot="cd \$${c}webroot"
+  alias ${c}website="cd \$${c}website"
+done
 
 #{{{1 Bash Colors and Prompt
 LS_COLORS=$LS_COLORS:'di=00;33:ln=00;31:fi=00;32' 
