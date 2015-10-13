@@ -5,7 +5,7 @@ alias irc="weechat-curses"
 alias git=hub
 alias tmux='TERM=screen-256color tmux' 
 
-projects=( healthdata usda-nal data_starter )
+projects=( healthdata usda-nal/master data_starter )
 for project in ${projects[@]}
 do
   c=${project:0:1}
