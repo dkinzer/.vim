@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+export XDEBUG_CONFIG="idekey=xdebug"
+export XDEBUG_SESSION_START=1
+export DISPLAY=:99
+behat "$@"

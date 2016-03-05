@@ -7,6 +7,20 @@ alias tmux='TERM=screen-256color tmux'
 alias containerizeme='docker-machine start default; eval "$(docker-machine env default)"'
 export AHOY_CMD_PROXY=DOCKER
 
+projects=( healthdata usda-nal/master data_starter )
+for project in ${projects[@]}
+do
+  c=${project:0:1}
+  export ${c}root="/var/www/$project"
+  export ${c}webroot="/var/www/$project/docroot"
+  export ${c}website="/var/www/$project/docroot/sites/all/modules"
+  export ${c}profiles="/var/www/$project/docroot/profiles/dkan/modules/dkan"
+
+  alias ${c}root="cd \$${c}root"
+  alias ${c}profiles="cd \$${c}profiles"
+  alias ${c}webroot="cd \$${c}webroot"
+  alias ${c}website="cd \$${c}website"
+done
 
 #{{{1 Bash Colors and Prompt
 LS_COLORS=$LS_COLORS:'di=00;33:ln=00;31:fi=00;32' 

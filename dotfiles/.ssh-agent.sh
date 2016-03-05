@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# Only run if in SSH session:
-if [ -n "$SSH_CONNECTION" ]; then
+# Only run if in SSH session and ssh_forwarding is not turned on.
+if [ -n "$SSH_CONNECTION" ] && [ -z "$SSH_AUTH_SOCK" ]; then
   SSH_ENV="$HOME/.ssh/environment"
   function start_agent {
     echo "Initialising new SSH agent..."
