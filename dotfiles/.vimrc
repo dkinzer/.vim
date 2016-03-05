@@ -17,7 +17,7 @@ let g:pathogen_disabled = []
 "call add(g:pathogen_disabled, 'fireplace')
 "call add(g:pathogen_disabled, 'git')
 "call add(g:pathogen_disabled, 'gist-vim')
-"call add(g:pathogen_disabled, 'go')
+"call add(g:pathogen_disabled, 'go-vim')
 "call add(g:pathogen_disabled, 'gundo')
 "call add(g:pathogen_disabled, 'L9')
 "call add(g:pathogen_disabled, 'linediff')
@@ -289,3 +289,23 @@ set autoindent              "Auto indent based on previous line
 " {{{1 PIV settings.
 let php_folding=0
 "let g:DisableAutoPHPFolding=1
+"
+
+
+let g:vdebug_options = {
+      \ 'timeout': 60,
+      \ 'port': 9000,
+      \ 'debug_file': 'vdebug_log',
+      \ 'break_on_open': 1,
+      \ 'debug_file_level': 2,
+      \ 'debug_window_level': 1,
+      \ 'server': "0.0.0.0",
+      \ 'path_maps': {
+      \     '/var/www/docroot': '/Users/dkinzer/docker-share/pluto/civic-1548-ahoy-probo-circle-lky/docroot',
+      \     '/root/.composer': '/Users/dkinzer/projects/.composer'
+      \  } 
+      \ }
+
+let g:vdebug_features = {}
+let g:vdebug_features['max_children'] = 2048
+let g:vdebug_features['max_depth'] = 2048
