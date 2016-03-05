@@ -4,6 +4,8 @@
 alias irc="weechat-curses"
 alias git=hub
 alias tmux='TERM=screen-256color tmux' 
+alias containerizeme='docker-machine start default; eval "$(docker-machine env default)"'
+export AHOY_CMD_PROXY=DOCKER
 
 
 #{{{1 Bash Colors and Prompt
@@ -49,4 +51,9 @@ if [ -d $home_bin ]; then
   esac
 fi
 
+#{{{2 rbenv
+hash rbenv && eval "$(rbenv init -)"
 
+
+#{{{2 Go lang
+export GOPATH=$HOME/projects/go
