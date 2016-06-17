@@ -5,16 +5,19 @@ alias irc="weechat-curses"
 alias git=hub
 alias tmux='TERM=screen-256color tmux' 
 alias containerizeme='docker-machine start default; eval "$(docker-machine env default)"'
+if [ $(which hub) ]; then alias git=hub; fi
 export AHOY_CMD_PROXY=DOCKER
+base=~/docker-share/sites
 
-projects=( healthdata usda-nal/master data_starter )
+
+projects=( healthdata usda-nal/master data_starter_private ok_data lky )
 for project in ${projects[@]}
 do
   c=${project:0:1}
   export ${c}root="/var/www/$project"
-  export ${c}webroot="/var/www/$project/docroot"
-  export ${c}website="/var/www/$project/docroot/sites/all/modules"
-  export ${c}profiles="/var/www/$project/docroot/profiles/dkan/modules/dkan"
+  export ${c}webroot="$base/$project"
+  export ${c}website="$base/$project/docroot/sites/all/modules"
+  export ${c}profiles="``/$project/dkan"
 
   alias ${c}root="cd \$${c}root"
   alias ${c}profiles="cd \$${c}profiles"
