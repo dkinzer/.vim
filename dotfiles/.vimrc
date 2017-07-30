@@ -286,6 +286,7 @@ set tabstop=2               "Use two spaces for tabs
 set shiftwidth=2            "Use two spaces for auto-indent
 set autoindent              "Auto indent based on previous line
 
+let g:neocomplete#enable_at_startup = 1
 " {{{1 PIV settings.
 let php_folding=0
 "let g:DisableAutoPHPFolding=1
@@ -301,7 +302,7 @@ let g:vdebug_options = {
       \ 'debug_window_level': 1,
       \ 'server': "0.0.0.0",
       \ 'path_maps': {
-      \     '/var/www/docroot': '/Users/dkinzer/docker-share/pluto/civic-1548-ahoy-probo-circle-lky/docroot',
+      \     '/var/www': '/Users/dkinzer/docker-share/sites/healthdata',
       \     '/root/.composer': '/Users/dkinzer/projects/.composer'
       \  } 
       \ }
