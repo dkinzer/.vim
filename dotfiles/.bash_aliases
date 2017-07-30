@@ -4,7 +4,7 @@
 alias irc="weechat-curses"
 alias git=hub
 alias tmux='TERM=screen-256color tmux' 
-alias containerizeme='docker-machine start default; eval "$(docker-machine env default)"'
+alias containerizeme='docker-machine start default; eval "$(docker-machine env default)"; docker-machine-nfs default --shared-folder=$HOME/docker-share --force'
 if [ $(which hub) ]; then alias git=hub; fi
 export AHOY_CMD_PROXY=DOCKER
 base=~/docker-share/sites
