@@ -74,3 +74,4 @@ hash rbenv && eval "$(rbenv init -)"
 
 #{{{2 Go lang
 export GOPATH=$HOME/projects/go
+export PATH=$PATH:$GOPATH/bin
