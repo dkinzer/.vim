@@ -3,7 +3,7 @@
 --langmap=php:.engine.inc.module.theme.php.test
 --recurse=yes
 --PHP-kinds=cfvd
---languages=php
+--languages=php,ruby,-javascript,sql
 --recurse=yes
 --totals=yes
 --tag-relative=no
@@ -11,4 +11,5 @@
 --regex-PHP=/interface\s+([^ ]+)/\1/c/
 --regex-PHP=/(public\s+|static\s+|protected\s+|private\s+)\$([^ =contextet]+)/\2/p/
 --regex-PHP=/(public\s+|static\s+|abstract\s+|protected\s+|private\s+)function\s+\&?\s*([^ (]+)/\2/f/
+--append
 
