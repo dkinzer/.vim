@@ -310,3 +310,6 @@ let g:vdebug_options = {
 let g:vdebug_features = {}
 let g:vdebug_features['max_children'] = 2048
 let g:vdebug_features['max_depth'] = 2048
+
+" {{{1 Syntastic settings.
+let g:syntastic_ruby_checkers=['mri', 'rubocop']
