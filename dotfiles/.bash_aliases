@@ -7,6 +7,7 @@ alias tmux='TERM=screen-256color tmux'
 alias containerizeme='docker-machine start default; eval "$(docker-machine env default)"; docker-machine-nfs default --shared-folder=$HOME/docker-share --force'
 if [ $(which hub) ]; then alias git=hub; fi
 export AHOY_CMD_PROXY=DOCKER
+export EDITOR=vim
 base=~/docker-share/sites
 
 
@@ -37,7 +38,7 @@ WHITE="\[\033[0;37m\]"
 
 # Makes prompt wrap to next line.
 COLUMNS=250
-PS1="$BLUE\u$RED\$(date +%H:%M)[\w]\n($GREEN\W$RED)$YELLOW\$(__git_ps1 '(%s)')$GREEN\$$WHITE"
+PS1="$BLUE\u$RED \$(date +%H:%M) [\w]\n($GREEN\W$RED) $YELLOW\$(__git_ps1 '(%s)')$GREEN > $WHITE"
 
 # Mac Colors.
 export CLICOLOR=1
@@ -46,12 +47,12 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 #{{{1 Extras
 set -o vi
 
-# Auto ssh-agent.
+#{{{2 Auto ssh-agent.
 if [ -e ~/.ssh-agent.sh ]; then
   source ~/.ssh-agent.sh
 fi
 
-# Conditionally add paths to $PATH
+#{{{2 Conditionally add paths to $PATH
 composer_bin=~/.composer/vendor/bin
 if [ -d $composer_bin ]; then
   case ":${PATH:=$composer_bin}:" in
@@ -74,3 +75,12 @@ hash rbenv && eval "$(rbenv init -)"
 #{{{2 Go lang
 export GOPATH=$HOME/projects/go
 export PATH=$PATH:$GOPATH/bin
+
+#{{{ Wee chat fortunes
+if [ -d ~/projects/cowsay_weechat_fortune ]; then
+  pushd ~/projects/cowsay_weechat_fortune > /dev/null
+  rake
+  popd > /dev/null
+fi
+
+export LT_HOME=/Applications/LightTable
