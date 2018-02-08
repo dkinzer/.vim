@@ -84,3 +84,10 @@ if [ -d ~/projects/cowsay_weechat_fortune ]; then
 fi
 
 export LT_HOME=/Applications/LightTable
+
+# {{{1 GPG
+export GPG_TTY=$(tty)
+use_gpg_agent() {
+  gpgconf --kill gpg-agent 
+	eval $( gpg-agent --daemon )
+}
