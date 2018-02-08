@@ -151,6 +151,10 @@ else
   colorscheme solarized
 endif
 
+" Spelling highlights need to come after colorscheme changes
+hi clear SpellBad
+hi SpellBad cterm=underline
+
 " Highlight long comments and trailing whitespace.
 if has("matchadd")
   highlight ExtraWhitespace ctermbg=red guibg=red
