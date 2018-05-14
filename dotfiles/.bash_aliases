@@ -70,7 +70,9 @@ if [ -d $home_bin ]; then
 fi
 
 #{{{2 rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
 hash rbenv && eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
 #{{{2 Go lang
 export GOPATH=$HOME/projects/go
@@ -91,3 +93,4 @@ use_gpg_agent() {
   gpgconf --kill gpg-agent 
 	eval $( gpg-agent --daemon )
 }
+
