@@ -4,3 +4,11 @@
 
 [core]
 	editor = vim
+	excludesfile = /Users/dkinzer/.gitignore
+
+[github]
+	user = dkinzer
+
+[commit]
+	gpgsign = true
+	verbose = true
