@@ -5,6 +5,8 @@ alias irc="weechat-curses"
 alias git=hub
 alias tmux='TERM=screen-256color tmux' 
 alias containerizeme='docker-machine start default; eval "$(docker-machine env default)"; docker-machine-nfs default --shared-folder=$HOME/docker-share --force'
+alias lasso='DOMAIN=devkinzer.test roper lasso -b'
+alias release='DOMAIN=devkinzer.test roper release -b'
 if [ $(which hub) ]; then alias git=hub; fi
 export AHOY_CMD_PROXY=DOCKER
 export EDITOR=vim
