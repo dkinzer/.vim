@@ -1,5 +1,12 @@
 #!/bin/bash
 
+if type brew &>/dev/null; then
+  if [[ -f $(brew --prefix)/etc/profile.d/bash_completion.sh ]];
+  then
+    source "$(brew --prefix)/etc/profile.d/bash_completion.sh"
+  fi
+fi
+
 #{{{1 Aliases
 alias irc="weechat-curses"
 alias git=hub
