@@ -15,6 +15,6 @@ unless you want to overwrite your own dotfiles with mine.
 ![Screenshot-2](https://raw.github.com/dkinzer/.vim/master/etc/images/vim_screenshot2.png)
 
 ##Installation##
-`wget -qO - https://raw.github.com/dkinzer/.vim/master/deploy.sh | bash`
+`curl https://raw.githubusercontent.com/dkinzer/.vim/master/deploy.sh | bash`
 
 

@@ -84,7 +84,7 @@ hash rbenv && eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
 #{{{2 Go lang
-export GOPATH=$HOME/projects/go
+eval `go env | grep GOPATH` &> /dev/null
 export PATH=$PATH:$GOPATH/bin
 
 #{{{ Wee chat fortunes
