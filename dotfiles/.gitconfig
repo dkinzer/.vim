@@ -1,14 +1,18 @@
 [user]
-	name = David Kinzer
-	email = dtkinzer@gmail.com
+  name = David Kinzer
+  email = dtkinzer@gmail.com
+  signingkey = 2E0053DF6911F5F8
 
 [core]
-	editor = vim
-	excludesfile = /Users/dkinzer/.gitignore
+  editor = vim
+  excludesfile = ~/.gitignore
 
 [github]
-	user = dkinzer
-
+  user = dkinzer
 [commit]
-	gpgsign = true
-	verbose = true
+  gpgsign = false
+  verbose = true
+[init]
+  defaultBranch = main
+[pull]
+  ff = only

@@ -80,12 +80,19 @@ fi
 
 #{{{2 rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
-hash rbenv && eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+
+if command -v rbenv
+then
+  hash rbenv && eval "$(rbenv init -)"
+  export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+fi
 
 #{{{2 Go lang
-eval `go env | grep GOPATH` &> /dev/null
-export PATH=$PATH:$GOPATH/bin
+if command -v go
+then
+  eval `go env | grep GOPATH` &> /dev/null
+  export PATH=$PATH:$GOPATH/bin
+fi
 
 #{{{ Wee chat fortunes
 if [ -d ~/projects/cowsay_weechat_fortune ]; then

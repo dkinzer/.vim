@@ -11,7 +11,7 @@ then
   git clone $vim_conf_source '.vim';
   cd ~/.vim
 else 
-  git pull origin master
+  git pull origin main
 fi
 
 log "Upate the submodules."
