@@ -3,6 +3,9 @@
   email = dtkinzer@gmail.com
   signingkey = 2E0053DF6911F5F8
 
+[color]
+  ui = true
+
 [core]
   editor = vim
   excludesfile = ~/.gitignore
