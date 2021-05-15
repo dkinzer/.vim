@@ -20,21 +20,6 @@ export EDITOR=vim
 base=~/docker-share/sites
 
 
-projects=( healthdata usda-nal/master data_starter_private ok_data lky )
-for project in ${projects[@]}
-do
-  c=${project:0:1}
-  export ${c}root="/var/www/$project"
-  export ${c}webroot="$base/$project"
-  export ${c}website="$base/$project/docroot/sites/all/modules"
-  export ${c}profiles="``/$project/dkan"
-
-  alias ${c}root="cd \$${c}root"
-  alias ${c}profiles="cd \$${c}profiles"
-  alias ${c}webroot="cd \$${c}webroot"
-  alias ${c}website="cd \$${c}website"
-done
-
 #{{{1 Bash Colors and Prompt
 LS_COLORS=$LS_COLORS:'di=00;33:ln=00;31:fi=00;32' 
 export LS_COLORS
@@ -62,13 +47,6 @@ if [ -e ~/.ssh-agent.sh ]; then
 fi
 
 #{{{2 Conditionally add paths to $PATH
-composer_bin=~/.composer/vendor/bin
-if [ -d $composer_bin ]; then
-  case ":${PATH:=$composer_bin}:" in
-    *:$composer_bin:*)  ;;
-    *) export PATH="$composer_bin:$PATH"  ;;
-  esac
-fi
 
 home_bin=~/bin
 if [ -d $home_bin ]; then
