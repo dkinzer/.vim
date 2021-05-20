@@ -1,0 +1,13 @@
+#! /usr/bin/env bash
+set -e
+linode-ip $1 | tee /tmp/linode-ssh
+linode_ip=$(tail -1 /tmp/linode-ssh)
+if [[ "$linode_ip" == "Good bye!" ]]; then
+  exit
+fi
+if [[ ! -z "$linode_ip" ]]; then
+  shift
+  ssh -p 9229 tuj27080@$linode_ip $*
+else
+  echo "No matching linodes"
+fi
