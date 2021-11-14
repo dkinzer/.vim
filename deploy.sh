@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -eo pipefai
+
 function log {
   echo -e "\e[1;31m>> \e[1;34m$1\e[0m"
 }
@@ -11,6 +13,7 @@ then
   git clone $vim_conf_source '.vim';
   cd ~/.vim
 else 
+  cd ~/.vim
   git pull origin main
 fi
 
