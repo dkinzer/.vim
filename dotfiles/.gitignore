@@ -3,3 +3,8 @@ tags
 *.swo
 *.swq
 .byebug_history
+*.pem
+*.pem.yml
+
+create_backup_schedule.sh
+restore_from_backup.sh
