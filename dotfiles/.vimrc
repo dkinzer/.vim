@@ -318,3 +318,5 @@ let g:vdebug_features['max_depth'] = 2048
 
 " {{{1 Syntastic settings.
 let g:syntastic_ruby_checkers=['mri', 'rubocop']
+" {{{1 SnipMate settings.
+let g:snipMate = { 'snippet_version': 1 }
