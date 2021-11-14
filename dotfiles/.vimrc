@@ -46,6 +46,7 @@ let g:pathogen_disabled = []
 "call add(g:pathogen_disabled, 'vim-niji')
 "call add(g:pathogen_disabled, 'vim-pathogen')
 "call add(g:pathogen_disabled, 'vim-schemer')
+"call add(g:pathogen_disabled, 'vim-snippets')
 "call add(g:pathogen_disabled, 'vividchalk')
 "call add(g:pathogen_disabled, 'webapi-vim')
 "call add(g:pathogen_disabled, 'web-indent')
