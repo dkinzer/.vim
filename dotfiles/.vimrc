@@ -8,7 +8,6 @@ let g:pathogen_disabled = []
 "call add(g:pathogen_disabled, 'delimitMate')
 "call add(g:pathogen_disabled, 'DirDiff')
 "call add(g:pathogen_disabled, 'Dockerfile')
-"call add(g:pathogen_disabled, 'drupal_snippets')
 "call add(g:pathogen_disabled, 'drupalvim')
 "call add(g:pathogen_disabled, 'easymotion')
 "call add(g:pathogen_disabled, 'ftdetect')
@@ -182,7 +181,7 @@ if filereadable("/var/www/html/dkinzer/website/tags")
   set tags=./tags,/var/www/html/dkinzer/website/tags
 endif
 
-"{{{1Drupal settings.
+"{{{1PHP settings.
 let php_htmlInStrings = 1   "Syntax highlight for HTML inside PHP strings
 let php_parent_error_open = 1 "Display error for unmatch brackets
 let php_sql_query = 1 "for SQL syntax highlighting inside strings

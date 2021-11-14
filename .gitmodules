@@ -38,10 +38,6 @@
 	path = bundle/delimitMate
 	url = git://github.com/Raimondi/delimitMate.git
   ignore = untracked
-[submodule "bundle/drupalvim"]
-	path = bundle/drupalvim
-	url = http://git.drupal.org/project/vimrc.git
-  ignore = untracked
 [submodule "bundle/gundo"]
 	path = bundle/gundo
 	url = git://github.com/sjl/gundo.vim.git
