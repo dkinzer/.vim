@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eo pipefai
+set -eo pipefail
 
 function log {
   echo -e "\e[1;31m>> \e[1;34m$1\e[0m"
