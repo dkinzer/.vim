@@ -36,7 +36,7 @@ let g:pathogen_disabled = []
 "call add(g:pathogen_disabled, 'tagbar')
 "call add(g:pathogen_disabled, 'tasklist')
 "call add(g:pathogen_disabled, 'tlib')
-"call add(g:pathogen_disabled, 'vdebug')
+call add(g:pathogen_disabled, 'vdebug')
 "call add(g:pathogen_disabled, 'vim-classpath')
 "call add(g:pathogen_disabled, 'vim-chef')
 "call add(g:pathogen_disabled, 'vim-colors-solarize')
@@ -299,23 +299,23 @@ let php_folding=0
 "
 
 
-let g:vdebug_options = {
-      \ 'timeout': 60,
-      \ 'port': 9000,
-      \ 'debug_file': 'vdebug_log',
-      \ 'break_on_open': 1,
-      \ 'debug_file_level': 2,
-      \ 'debug_window_level': 1,
-      \ 'server': "0.0.0.0",
-      \ 'path_maps': {
-      \     '/var/www': '/Users/dkinzer/docker-share/sites/healthdata',
-      \     '/root/.composer': '/Users/dkinzer/projects/.composer'
-      \  } 
-      \ }
+"let g:vdebug_options = {
+      "\ 'timeout': 60,
+      "\ 'port': 9000,
+      "\ 'debug_file': 'vdebug_log',
+      "\ 'break_on_open': 1,
+      "\ 'debug_file_level': 2,
+      "\ 'debug_window_level': 1,
+      "\ 'server': "0.0.0.0",
+      "\ 'path_maps': {
+      "\     '/var/www': '/Users/dkinzer/docker-share/sites/healthdata',
+      "\     '/root/.composer': '/Users/dkinzer/projects/.composer'
+      "\  } 
+      "\ }
 
-let g:vdebug_features = {}
-let g:vdebug_features['max_children'] = 2048
-let g:vdebug_features['max_depth'] = 2048
+"let g:vdebug_features = {}
+"let g:vdebug_features['max_children'] = 2048
+"let g:vdebug_features['max_depth'] = 2048
 
 " {{{1 Syntastic settings.
 let g:syntastic_ruby_checkers=['mri', 'rubocop']

@@ -5,6 +5,7 @@ tags
 .byebug_history
 *.pem
 *.pem.yml
+vdebug_log
 
 create_backup_schedule.sh
 restore_from_backup.sh

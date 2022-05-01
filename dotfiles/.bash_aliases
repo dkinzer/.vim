@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [ -d /opt/homebrew ]; then
+  export PATH=/opt/homebrew/bin:$PATH
+fi
+
 if type brew &>/dev/null; then
   if [[ -f $(brew --prefix)/etc/profile.d/bash_completion.sh ]];
   then
