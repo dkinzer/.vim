@@ -37,6 +37,7 @@ let g:pathogen_disabled = []
 "call add(g:pathogen_disabled, 'tasklist')
 "call add(g:pathogen_disabled, 'tlib')
 call add(g:pathogen_disabled, 'vdebug')
+"call add(g:pathogen_disabled, 'vim-ansible-vault')
 "call add(g:pathogen_disabled, 'vim-classpath')
 "call add(g:pathogen_disabled, 'vim-chef')
 "call add(g:pathogen_disabled, 'vim-colors-solarize')
@@ -318,6 +319,11 @@ let php_folding=0
 "let g:vdebug_features['max_depth'] = 2048
 
 " {{{1 Syntastic settings.
-let g:syntastic_ruby_checkers=['mri', 'rubocop']
+"let g:syntastic_ruby_checkers=['mri', 'rubocop']
+let g:syntastic_ruby_checkers=['mri']
 " {{{1 SnipMate settings.
 let g:snipMate = { 'snippet_version': 1 }
+
+" {{{1 Ansible-Vault
+nnoremap <Leader>av :AnsibleVault<CR>
+nnoremap <Leader>au :AnsibleUnvault<CR>

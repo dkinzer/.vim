@@ -1,11 +1,23 @@
 tags
-*.swp
+*.swn
 *.swo
+*.swp
 *.swq
+*.swr
+*.sws
 .byebug_history
 *.pem
 *.pem.yml
 vdebug_log
 
+config/blacklight.yml
+
 create_backup_schedule.sh
 restore_from_backup.sh
+
+.env.local.x
+.env.local
+.env.test
+config/alma.yml
+config/bento.yml
+bot-challenge

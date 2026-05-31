@@ -19,3 +19,8 @@
   defaultBranch = main
 [pull]
   ff = only
+[http]
+	lowSpeedLimit = 1000
+	lowSpeedTime = 600
+[url "git@ssh.github.com:"]
+	insteadOf = git@github.com:

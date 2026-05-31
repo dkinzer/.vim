@@ -7,7 +7,7 @@ if [[ "$linode_ip" == "Good bye!" ]]; then
 fi
 if [[ ! -z "$linode_ip" ]]; then
   shift
-  ssh -p 9229 tuj27080@$linode_ip $*
+  ssh -p 9229 $linode_ip $*
 else
   echo "No matching linodes"
 fi

@@ -186,3 +186,6 @@
 [submodule "bundle/vim-snippets"]
 	path = bundle/vim-snippets
 	url = git://github.com/honza/vim-snippets.git
+[submodule "vim-ansible-vault"]
+	path = bundle/vim-ansible-vault
+	url = https://github.com/arouene/vim-ansible-vault.git
