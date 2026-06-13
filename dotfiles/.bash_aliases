@@ -1,11 +1,13 @@
 #!/bin/bash
 
 export EDITOR=vim
-PROD_CLUSTER=prod-library0-fqdn
-DEV_CLUSTER=dev-library0-fqdn
+PROD_CLUSTER=prod-library0
+DEV_CLUSTER=dev-library0
 
 
 #{{{1 Aliases
+alias bash_aliases='source ~/.bash_aliases'
+alias rake='bundle exec rake'
 alias irc="weechat-curses"
 alias tmux='TERM=screen-256color tmux' 
 alias containerizeme='docker-machine start default; eval "$(docker-machine env default)"; docker-machine-nfs default --shared-folder=$HOME/docker-share --force'
@@ -17,10 +19,10 @@ fi
 alias dev-cluster="kubectl config use $DEV_CLUSTER"
 alias prod-cluster="kubectl config use $PROD_CLUSTER"
 
-alias prod0='kubectl config use prod-library0-fqdn'
-alias prod1='kubectl config use prod-library1-fqdn'
+alias prod0='kubectl config use prod-library0'
+alias prod1='kubectl config use prod-library1'
 
-alias dev0='kubectl config use dev-library0-fqdn'
+alias dev0='kubectl config use dev-library0'
 alias dev1='kubectl config use dev-library1-fqdn'
 
 alias namespace="kubectl config set-context --current --namespace"
@@ -48,47 +50,6 @@ source_once() {
   fi
 }
 
-if command -v brew >/dev/null 2>&1; then
-  brew_prefix="$(brew --prefix)"
-
-  if [[ -f "$brew_prefix/etc/profile.d/bash_completion.sh" ]]; then
-    source_once "$brew_prefix/etc/profile.d/bash_completion.sh"
-  fi
-
-  git_prefix="$(brew --prefix git 2>/dev/null)"
-
-  if [[ -n "$git_prefix" && -f "$git_prefix/etc/bash_completion.d/git-prompt.sh" ]]; then
-    source_once "$git_prefix/etc/bash_completion.d/git-prompt.sh"
-  fi
-
-  if [[ -n "$git_prefix" && -f "$git_prefix/etc/bash_completion.d/git-completion.bash" ]]; then
-    source_once "$git_prefix/etc/bash_completion.d/git-completion.bash"
-  fi
-fi
-
-if command -v brew >/dev/null 2>&1; then
-  brew_prefix="$(brew --prefix)"
-
-  if [[ -f "$brew_prefix/etc/profile.d/bash_completion.sh" ]]; then
-    source_once "$brew_prefix/etc/profile.d/bash_completion.sh"
-  fi
-
-  git_prefix="$(brew --prefix git 2>/dev/null)"
-
-  if [[ -n "$git_prefix" && -f "$git_prefix/etc/bash_completion.d/git-prompt.sh" ]]; then
-    source_once "$git_prefix/etc/bash_completion.d/git-prompt.sh"
-  fi
-
-  if [[ -n "$git_prefix" && -f "$git_prefix/etc/bash_completion.d/git-completion.bash" ]]; then
-    source_once "$git_prefix/etc/bash_completion.d/git-completion.bash"
-  fi
-fi
-
-
-if command -v velero >/dev/null 2>&1 && [[ -z "${_VELERO_COMPLETION_LOADED:-}" ]]; then
-  source <(velero completion bash)
-  _VELERO_COMPLETION_LOADED=1
-fi
 
 #{{{1 Bash Colors and Prompt
 LS_COLORS=$LS_COLORS:'di=00;33:ln=00;31:fi=00;32' 
@@ -102,13 +63,6 @@ WHITE="\[\033[0;37m\]"
 
 # Makes prompt wrap to next line.
 COLUMNS=250
-
-if type __git_ps1 >/dev/null 2>&1; then
-  GIT_PROMPT="\$(__git_ps1 '(%s)')"
-else
-  GIT_PROMPT=""
-fi
-PS1="$BLUE\u$RED \$(date +%H:%M) [\w]\n($GREEN\W$RED) $YELLOW$GIT_PROMPT$GREEN > $WHITE"
 
 # Mac Colors.
 export CLICOLOR=1
@@ -165,4 +119,47 @@ if [ -d ~/projects/cowsay_weechat_fortune ] && [[ -z "${_FORTUNE_LOADED:-}" ]]; 
   popd > /dev/null
   _FORTUNE_LOADED=1
 fi
+
+if command -v velero >/dev/null 2>&1 && [[ -z "${_VELERO_COMPLETION_LOADED:-}" ]]; then
+  source <(velero completion bash)
+  _VELERO_COMPLETION_LOADED=1
+fi
+
+if command -v brew >/dev/null 2>&1; then
+  brew_prefix="$(brew --prefix)"
+
+  if [[ -f "$brew_prefix/etc/profile.d/bash_completion.sh" ]]; then
+    source_once "$brew_prefix/etc/profile.d/bash_completion.sh"
+  fi
+
+  git_prefix="$(brew --prefix git 2>/dev/null)"
+
+  if [[ -n "$git_prefix" && -f "$git_prefix/etc/bash_completion.d/git-prompt.sh" ]]; then
+    source_once "$git_prefix/etc/bash_completion.d/git-prompt.sh"
+  fi
+
+  if [[ -n "$git_prefix" && -f "$git_prefix/etc/bash_completion.d/git-completion.bash" ]]; then
+    source_once "$git_prefix/etc/bash_completion.d/git-completion.bash"
+  fi
+fi
+
+if command -v brew >/dev/null 2>&1; then
+  brew_prefix="$(brew --prefix)"
+
+  if [[ -f "$brew_prefix/etc/profile.d/bash_completion.sh" ]]; then
+    source_once "$brew_prefix/etc/profile.d/bash_completion.sh"
+  fi
+
+  git_prefix="$(brew --prefix git 2>/dev/null)"
+
+  if [[ -n "$git_prefix" && -f "$git_prefix/etc/bash_completion.d/git-prompt.sh" ]]; then
+    source_once "$git_prefix/etc/bash_completion.d/git-prompt.sh"
+  fi
+
+  if [[ -n "$git_prefix" && -f "$git_prefix/etc/bash_completion.d/git-completion.bash" ]]; then
+    source_once "$git_prefix/etc/bash_completion.d/git-completion.bash"
+  fi
+fi
+
+PS1="$BLUE\u$RED \$(date +%H:%M) [\w]\n($GREEN\W$RED) $YELLOW\$(__git_ps1 '(%s)')$GREEN > $WHITE"
 
